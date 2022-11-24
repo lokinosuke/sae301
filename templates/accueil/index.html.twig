@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccueilController!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
 <style>
@@ -11,7 +11,7 @@
         justify-content: center;
         background-image: url("{{ asset('assets/images/hero.jpg') }}");
     }
-    .sectionun {
+    .sectiondeux {
         height: 100vh;
         display: flex;
         align-items: center;
@@ -19,20 +19,37 @@
         background-color: black;
     }
 
-    h1 {
+    .sectionun p {
+        color: white;
         font-size: 90px;
         width: 60%;
+        font-weight: bolder;
+    }
+
+    .sectiondeux p {
+        color: white;
+        font-size: 50px;
+        width: 60%;
+        text-align: left;
+    }
+
+    .sectiondeux p span {
+        font-weight: bold;
     }
 </style>
 
 <div class="sectionun">
-    <h1>Tous vos billets, un seul site.</h1>
+    <p>Tous vos billets, un seul site.</p>
 
 
 </div>
     <div class="sectiondeux">
-        <h1>Tous vos billets, un seul site.</h1>
-
-
+        <div class="textdeux">
+        <p>Votre ville comme <br>
+            vous ne l’avez <span>JAMAIS</span> vu</p>
+        <p class="minitext">Obtenez votre billet pour l’évènement de <br>
+            votre choix.</p>
+        </div>
+        <img src= url("{{ asset('assets/images/hand.png') }}") alt="">
     </div>
 {% endblock %}
