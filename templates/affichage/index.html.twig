@@ -3,18 +3,232 @@
 {% block title %}Hello AffichageController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <style>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/sae301/src/Controller/AffichageController.php'|file_link(0) }}">src/Controller/AffichageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/sae301/templates/affichage/index.html.twig'|file_link(0) }}">templates/affichage/index.html.twig</a></code></li>
-    </ul>
-</div>
+        .section-card {
+            display: flex;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .card-container {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            width: 80%;
+            margin-top: 130px;
+        }
+
+        .card-img {
+            object-fit: cover;
+        }
+
+        .card-title {
+            padding-left: 20px;
+            font-weight: bold;
+        }
+
+        .card {
+            display: flex;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+
+        .card-text1 {
+            padding-left: 20px;
+            color: gray;
+            font-weight: bold;
+        }
+
+        .text-container {
+            margin-left: 20px;
+            background-color: black;
+            border-radius: 15px;
+            width: 180px;
+        }
+
+        .text-container2 {
+            margin-left: 20px;
+            background-color: #3EB57C;
+            border-radius: 15px;
+            width: 100px;
+        }
+
+        .text-container3 {
+            margin-left: 20px;
+            background-color: #3E8AB5;
+            border-radius: 15px;
+            width: 100px;
+        }
+
+        .text-container4 {
+            margin-left: 20px;
+            background-color: #B53E3E;
+            border-radius: 15px;
+            width: 100px;
+        }
+
+        .text-container5 {
+            margin-left: 20px;
+            background-color: #784F86;
+            border-radius: 15px;
+            width: 100px;
+        }
+
+
+
+
+        .card-text2 {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding: 3px;
+
+        }
+
+        .card-text4 {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding: 3px;
+
+        }
+
+        .card-text3 {
+            padding-left: 20px;
+            font-weight: bold;
+        }
+
+        .btn {
+            background-color: black;
+        }
+
+        .card-title1 {
+            margin: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .card1 {
+            margin: 50px 100px 50px 100px;
+        }
+
+
+        .btn {
+            display: flex;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        #cercle {
+            position: absolute;
+            width: 2000px;
+            height: 2000px;
+            border-radius: 1000px;
+            left: 250px;
+            bottom: 1px;
+            background: #B98FCF;
+        }
+
+        #cercle2 {
+            position: absolute;
+            width: 2000px;
+            height: 2000px;
+            border-radius: 1000px;
+            right: 800px;
+            top: 300px;
+            background: #5079BE;
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                display: flex;
+                margin: 0 auto;
+                margin-top: 20px;
+                width: 22rem;
+            }
+
+            .card-container {
+                display: flex;
+                margin: 0 auto;
+                flex-wrap: wrap;
+            }
+
+            .panier-achat {
+                margin-top: 30px;
+            }
+        }
+    </style>
+
+    <div id="cercle"></div>
+    <div id="cercle2"></div>
+
+    <div class="card-container">
+
+        <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
+            <img src="https://www.stereolux.org/sites/default/files/styles/auto_1920/public/ged/carremakala_0.jpg?itok=x1OG7Xq1" class="card-img-top card-img" alt="concert makala" height="200rem">
+            <div class="card-body">
+                <h5 class="card-title text-start">Makala - Elysée Montmartre</h5>
+                <p class="card-text1 fs-6 text-start">22 Novembre 2022</p>
+                <p class="card-text3 fs-2 text-start">39€</p>
+                <div class="text-container">
+                    <p class="card-text2 fs-6">Ajouter au panier</p>
+                </div>
+                <div class="text-container2">
+                    <p class="card-text4 fs-6">Musique</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
+            <img src="https://www.worldartfoundations.com/wp-content/uploads/2021/09/411307_b5a8bc072878835a6bc3c6b026748f21.jpg" class="card-img-top card-img" alt="bianca" height="200rem">
+            <div class="card-body">
+                <h5 class="card-title text-start">Open Space #8 Bianca Bondi</h5>
+                <p class="card-text1 fs-6 text-start">06 décembre 2022</p>
+                <p class="card-text3 fs-2 text-start">25€</p>
+                <div class="text-container">
+                    <p class="card-text2 fs-6">Ajouter au panier</p>
+                </div>
+                <div class="text-container3">
+                    <p class="card-text4 fs-6">Expo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
+            <img src="https://i.ytimg.com/vi/u34gHaRiBIU/maxresdefault.jpg" class="card-img-top card-img" alt="bianca" height="200rem">
+            <div class="card-body">
+                <h5 class="card-title text-start">The Batman (dir. Matt Reeves)</h5>
+                <p class="card-text1 fs-6 text-start">25 novembre 2022</p>
+                <p class="card-text3 fs-2 text-start">10€</p>
+                <div class="text-container">
+                    <p class="card-text2 fs-6">Ajouter au panier</p>
+                </div>
+                <div class="text-container4">
+                    <p class="card-text4 fs-6">Cinéma</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
+            <img src="https://d1k4bi32qf3nf2.cloudfront.net/product/2022/05/lesecretdesherlockholmestheatrelabruyere1_1651481923.jpg" class="card-img-top card-img" alt="bianca" height="200rem">
+            <div class="card-body">
+                <h5 class="card-title text-start">Le Secret de Sherlock Holmes</h5>
+                <p class="card-text1 fs-6 text-start">25 mars 2023</p>
+                <p class="card-text3 fs-2 text-start">18€</p>
+                <div class="text-container">
+                    <p class="card-text2 fs-6">Ajouter au panier</p>
+                </div>
+                <div class="text-container5">
+                    <p class="card-text4 fs-6">Théâtre</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </body>
+
+    </div>
 {% endblock %}
