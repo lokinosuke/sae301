@@ -1,0 +1,118 @@
+/* footer */
+footer {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+}
+footer p {
+    color: white;
+}
+.linkfooter a {
+    text-decoration: none;
+    color: rgb(133, 133, 133);
+    margin: 5px;
+}
+/* INDEX */
+ .sectionun {
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-image: url("{{ 'asset(../images/hero.jpg')}}");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+
+ }
+.sectiondeux {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+.sectiontroix {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: black;
+}
+.sectionun p {
+    color: white;
+    font-size: 90px;
+    width: 60%;
+    font-weight: bolder;
+}
+
+.billeterie {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 12px 60px 12px 60px;
+    border-radius: 25px;
+}
+.ville {
+    font-size: 50px;
+    text-align: left;
+}
+.jamais {
+    font-weight: bold;
+}
+.obtenez {
+    font-size: 20px;
+    margin-bottom: 60px;
+    text-align: left;
+}
+.right img{
+    height: 760px;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.rechercher {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 12px 60px 12px 60px;
+    border-radius: 25px;
+}
+.ville {
+    font-size: 50px;
+}
+.jamais {
+    font-weight: bold;
+}
+.obtenez {
+    font-size: 20px;
+    margin-bottom: 60px;
+}
+.right img{
+    height: 760px;
+}
+
+.sectiontroix > .right {
+    row-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: center;
+    width: 25%;
+    margin-left: 10%;
+}
+.envie {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+.decouvrez {
+    font-size: 40px;
+    text-align: left;
+}
+.decouvrez span{
+    font-weight: bold;
+}
