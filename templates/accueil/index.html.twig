@@ -4,13 +4,22 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .sectionun {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url("{{ asset('assets/images/hero.jpg') }}");
+    }
+
+    h1 {
+        font-size: 90px;
+        width: 60%;
+    }
 </style>
 
-<div class="example-wrapper">
-    <h1>BIENVENUE SUR LE SITE DE VICE</h1>
-    <p>liberez nous svp svp jme mets a genoux</p>
+<div class="sectionun">
+    <h1>Tous vos billets, un seul site.</h1>
 
 
 </div>
