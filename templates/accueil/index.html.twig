@@ -10,6 +10,9 @@
         align-items: center;
         justify-content: center;
         background-image: url("{{ asset('assets/images/hero.jpg') }}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .sectiondeux {
         height: 100vh;
@@ -17,8 +20,14 @@
         align-items: center;
         justify-content: center;
         background-color: black;
+        color: white;
     }
-
+    .sectiontroix {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        color: black;
+    }
     .sectionun p {
         color: white;
         font-size: 90px;
@@ -26,30 +35,104 @@
         font-weight: bolder;
     }
 
-    .sectiondeux p {
-        color: white;
+    .billeterie {
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        padding: 12px 60px 12px 60px;
+        border-radius: 25px;
+    }
+    .ville {
         font-size: 50px;
-        width: 60%;
         text-align: left;
     }
+    .jamais {
+        font-weight: bold;
+    }
+    .obtenez {
+        font-size: 20px;
+        margin-bottom: 60px;
+        text-align: left;
+    }
+    .right img{
+        height: 760px;
+    }
+    .left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .rechercher {
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        padding: 12px 60px 12px 60px;
+        border-radius: 25px;
+    }
+    .ville {
+        font-size: 50px;
+    }
+    .jamais {
+        font-weight: bold;
+    }
+    .obtenez {
+        font-size: 20px;
+        margin-bottom: 60px;
+    }
+    .right img{
+        height: 760px;
+    }
 
-    .sectiondeux p span {
+    .sectiontroix > .right {
+        row-gap: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: center;
+        width: 25%;
+        margin-left: 10%;
+    }
+    .envie {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: left;
+    }
+    .decouvrez {
+        font-size: 40px;
+        text-align: left;
+    }
+    .decouvrez span{
         font-weight: bold;
     }
 </style>
 
 <div class="sectionun">
     <p>Tous vos billets, un seul site.</p>
-
-
 </div>
     <div class="sectiondeux">
-        <div class="textdeux">
-        <p>Votre ville comme <br>
-            vous ne l’avez <span>JAMAIS</span> vu</p>
-        <p class="minitext">Obtenez votre billet pour l’évènement de <br>
-            votre choixx.</p>
+        <div class="left">
+            <p class="ville">Votre ville comme <br>
+                vous ne l’avez  <span class="jamais">JAMAIS</span> vu</p>
+            <p class="obtenez">
+                Obtenez votre billet pour l’évènement de <br>
+                votre choix.
+            </p>
+            <a class="billeterie" href="{{ path('app_accueil') }}">BILLETERIE</a>
         </div>
-        <img src= url("{{ asset('assets/images/hand.png') }}") alt="">
+        <div class="right">
+            <img src="{{ asset('assets/images/hand.png') }}" alt="hand with ticket">
+        </div>
+    </div>
+
+<div class="sectiontroix">
+    <div class="left">
+        <img src="{{ asset('assets/images/work.jpg') }}" alt="man watching tv">
+    </div>
+    <div class="right">
+        <p class="envie">VOS ENVIES</p>
+        <p class="decouvrez">Découvrez ce qui vous fait <span>plaisir</span></p>
+        <p style="font-size: 18px; text-align: left;">Une pièce de théâtre ? Un film ? Un concert ? Laissez vous guider par notre
+            système de recherche.</p>
+        <a class="rechercher"href="{{ path('app_accueil') }}">RECHERCHER</a>
     </div>
 {% endblock %}
