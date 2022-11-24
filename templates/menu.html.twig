@@ -4,6 +4,7 @@
         box-sizing: border-box;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
+        margin: 0;
     }
 
     nav {
@@ -13,6 +14,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        background: rgb(0,0,0);
+        background: linear-gradient(180deg, rgba(0,0,0,0.38809520390187324) 0%, rgba(255,255,255,0) 100%);
     }
 
 
@@ -39,6 +42,7 @@
         align-items: center;
         width: 100%;
         justify-content: space-between;
+        margin: 20px 20px 0px 20px;
     }
     .nav-links a .active {
         color: #6B705C;
@@ -60,6 +64,7 @@
     img {
         width: 100%;
     }
+
 
     @media (max-width:690px) {
         .nav-links a {
@@ -142,7 +147,15 @@
             color: white;
             background-color: black;
             border-radius: 25px;
-            padding: 12px 20px 10px 20px;
+            padding: 15px 20px 15px 20px;
+            font-size: 0.9rem;
+        }
+        .buttonnav2 {
+            color: white;
+            background-color: black;
+            border-radius: 25px;
+            padding: 15px 40px 15px 40px;
+            font-size: 0.9rem;
         }
     }
 
@@ -167,9 +180,9 @@
             <div class="navcenter">
                 <a class="navlinkblack linkcolor" href="{{ path('app_accueil') }}">Agenda</a>
                 <a class="navlinkblack linkcolor" href="{{ path('app_accueil') }}">Billeterie</a>
-                <a class="buttonnav" href="{{ path('app_login') }}">LOGIN</a>
+                <a class="buttonnav2" href="{{ path('app_login') }}">LOG IN</a>
             </div>
             <a class="buttonnav" href="{{ path('app_panier') }}">MON PANIER</a>
         </div>
     </nav>
-    </header>
+</header>
