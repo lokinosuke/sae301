@@ -20,7 +20,7 @@ footer p {
      display: flex;
      align-items: center;
      justify-content: center;
-     background-image: url("{{ 'asset(../images/hero.jpg')}}");
+     background-image: url("{{ asset('public/assets/images/hero.jpg')}}");
      background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
