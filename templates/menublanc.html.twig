@@ -43,7 +43,7 @@
         align-items: center;
         width: 100%;
         justify-content: space-between;
-        margin: 0px;
+        margin: 20px 10px 0px 10px;
     }
     .nav-links a .active {
         color: #6B705C;
@@ -64,6 +64,15 @@
     }
     img {
         width: 100%;
+    }
+
+    .badge {
+        position: absolute;
+        top: 20px;
+        padding: 10px 12px;
+        border-radius: 60%;
+        background: #B98FCF;
+        color: white;
     }
 
 
@@ -184,7 +193,8 @@
                 <a class="navlinkblack linkcolor" href="{{ path('app_affichage') }}">Billeterie</a>
                 <a class="buttonnav2" href="{{ path('app_login') }}">LOG IN</a>
             </div>
-            <a class="buttonnav" href="{{ path('app_panier') }}">MON PANIER</a>
+            <a class="buttonnav" href="{{ path('app_panier') }}">MON PANIER
+                <span class="badge">0</span></a>
         </div>
     </nav>
 </header>
