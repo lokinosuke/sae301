@@ -170,67 +170,22 @@
     <div id="cercle2"></div>
 
     <div class="card-container">
-
+{% for manif in manifs %}
         <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
-            <img src="https://www.stereolux.org/sites/default/files/styles/auto_1920/public/ged/carremakala_0.jpg?itok=x1OG7Xq1" class="card-img-top card-img" alt="concert makala" height="200rem">
+            <img src="{{ asset("assets/images/#{ manif.affiche }") }}" class="card-img-top card-img" alt="concert makala" height="200rem">
             <div class="card-body">
-                <h5 class="card-title text-start">Makala - Elysée Montmartre</h5>
-                <p class="card-text1 fs-6 text-start">22 Novembre 2022</p>
-                <p class="card-text3 fs-2 text-start">39€</p>
+                <h5 class="card-title text-start"> {{ manif.titre}} - {{ manif.derouler.lieu }}</h5>
+                <p class="card-text1 fs-6 text-start">{{ manif.date |date("d/m/Y H:i")}}</p>
+                <p class="card-text3 fs-2 text-start">{{ manif.prix }} €</p>
                 <div class="text-container">
                     <p class="card-text2 fs-6">Ajouter au panier</p>
                 </div>
                 <div class="text-container2">
-                    <p class="card-text4 fs-6">Musique</p>
+                    <p class="card-text4 fs-6">{{ manif.genre }}</p>
                 </div>
             </div>
         </div>
-
-        <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
-            <img src="https://www.worldartfoundations.com/wp-content/uploads/2021/09/411307_b5a8bc072878835a6bc3c6b026748f21.jpg" class="card-img-top card-img" alt="bianca" height="200rem">
-            <div class="card-body">
-                <h5 class="card-title text-start">Open Space #8 Bianca Bondi</h5>
-                <p class="card-text1 fs-6 text-start">06 décembre 2022</p>
-                <p class="card-text3 fs-2 text-start">25€</p>
-                <div class="text-container">
-                    <p class="card-text2 fs-6">Ajouter au panier</p>
-                </div>
-                <div class="text-container3">
-                    <p class="card-text4 fs-6">Expo</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
-            <img src="https://i.ytimg.com/vi/u34gHaRiBIU/maxresdefault.jpg" class="card-img-top card-img" alt="bianca" height="200rem">
-            <div class="card-body">
-                <h5 class="card-title text-start">The Batman (dir. Matt Reeves)</h5>
-                <p class="card-text1 fs-6 text-start">25 novembre 2022</p>
-                <p class="card-text3 fs-2 text-start">10€</p>
-                <div class="text-container">
-                    <p class="card-text2 fs-6">Ajouter au panier</p>
-                </div>
-                <div class="text-container4">
-                    <p class="card-text4 fs-6">Cinéma</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
-            <img src="https://d1k4bi32qf3nf2.cloudfront.net/product/2022/05/lesecretdesherlockholmestheatrelabruyere1_1651481923.jpg" class="card-img-top card-img" alt="bianca" height="200rem">
-            <div class="card-body">
-                <h5 class="card-title text-start">Le Secret de Sherlock Holmes</h5>
-                <p class="card-text1 fs-6 text-start">25 mars 2023</p>
-                <p class="card-text3 fs-2 text-start">18€</p>
-                <div class="text-container">
-                    <p class="card-text2 fs-6">Ajouter au panier</p>
-                </div>
-                <div class="text-container5">
-                    <p class="card-text4 fs-6">Théâtre</p>
-                </div>
-            </div>
-        </div>
-
+{% endfor %}
     </div>
 
     </div>

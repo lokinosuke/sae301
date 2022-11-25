@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ManifRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,10 +10,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class AffichageController extends AbstractController
 {
     #[Route('/affichage', name: 'app_affichage')]
-    public function index(): Response
+    public function index(ManifRepository $manifRepository): Response
     {
         return $this->render('affichage/index.html.twig', [
             'controller_name' => 'AffichageController',
+            'manifs' => $manifRepository->findAll()
         ]);
     }
 }
