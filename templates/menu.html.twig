@@ -66,6 +66,15 @@
         width: 100%;
     }
 
+    .badge {
+        position: absolute;
+        top: -1px;
+        padding: 10px 12px;
+        border-radius: 60%;
+        background: #B98FCF;
+        color: white;
+    }
+
 
     @media (max-width:690px) {
         nav {
@@ -187,7 +196,9 @@
                 <a class="navlinkblack linkcolor" href="{{ path('app_affichage') }}">Billeterie</a>
                 <a class="buttonnav2" href="{{ path('app_login') }}">LOG IN</a>
             </div>
-            <a class="buttonnav" href="{{ path('app_panier') }}">MON PANIER</a>
+            <a class="buttonnav" href="{{ path('app_panier') }}">MON PANIER
+                <span class="badge">3</span>
+            </a>
         </div>
     </nav>
 </header>
