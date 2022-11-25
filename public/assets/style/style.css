@@ -45,6 +45,8 @@ footer p {
     font-size: 90px;
     width: 60%;
     font-weight: bolder;
+    text-align: center;
+    line-height: 5rem;
 }
 
 .billeterie {
