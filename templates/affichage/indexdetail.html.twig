@@ -3,18 +3,129 @@
 {% block title %}Agenda{% endblock %}
 
 {% block body %}
+    <style>
+        .text-container {
+            margin-left: 20px;
+            background-color: black;
+            border-radius: 15px;
+            width: 180px;
+        }
 
+        .text-container2 {
+            margin-left: 20px;
+            background-color: #3EB57C;
+            border-radius: 15px;
+            width: 100px;
+        }
 
-    <img src="{{ asset("assets/images/#{ manif.affiche }") }}">
-                <p>{{ manif.genre }}</p>
+        .text-container3 {
+            margin-left: 20px;
+            background-color: #3E8AB5;
+            border-radius: 15px;
+            width: 100px;
+        }
+
+        .text-container4 {
+            margin-left: 20px;
+            background-color: #B53E3E;
+            border-radius: 15px;
+            width: 100px;
+        }
+
+        .text-container5 {
+            margin-left: 20px;
+            background-color: #784F86;
+            border-radius: 15px;
+            width: 100px;
+        }
+.genrecast {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+h5 {
+    FONT-SIZE: 55px;
+    font-weight: bold;
+}
+
+.lieuadr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.detail {
+    gap: 30%;
+    align-items: center;
+    display: flex;
+}
+
+.sectionundetail {
+    min-height:100vh ;
+    background-image: url("{{ asset("assets/images/#{ manif.affiche }") }}");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+}
+
+.alldetail {
+    background-color: rgba(0, 0, 0, 0.850);
+    height: min-content;
+    color: white;
+    border-radius: 50px 50px 0px 0px;
+    padding: 2rem;
+}
+
+.carddetail {
+
+}
+    </style>
+<div class="sectionundetail">
+<div class="carddetail">
+    <div class="alldetail">
+    <div class="genrecast">
+        {% if manif.genre == 'Théâtre' %}
+            <div class="text-container5">
+                <p class="card-text4">{{ manif.genre }}</p>
+            </div>
+        {% elseif manif.genre == 'Cinéma' %}
+            <div class="text-container4">
+                <p class="card-text4">{{ manif.genre }}</p>
+            </div>
+        {% elseif manif.genre == 'Concert' %}
+            <div class="text-container2">
+                <p class="card-text4">{{ manif.genre }}</p>
+            </div>
+        {% elseif manif.genre == 'Exposition' %}
+            <div class="text-container3">
+                <p class="card-text4">{{ manif.genre }}</p>
+            </div>
+        {% endif %}
                 <p>{{ manif.casting }}</p>
+    </div>
+    <div>
                 <h5 > {{ manif.titre}} </h5>
-                   <p> {{ manif.derouler.lieu }}</p>
+    </div>
+    <div class="detail">
+                 <div>
                 <p >{{ manif.date |date("d/m/Y H:i")}}</p>
-                    <p>{{ manif.derouler.adresse}}</p>
+                 </div>
+                <div class="lieuadr">
+                <p> {{ manif.derouler.lieu }}</p>
+                <p>{{ manif.derouler.adresse}}</p>
+                </div>
+    </div>
+    <div>
                     <p>{{ manif.description}} </p>
+    </div>
                 <p>{{ manif.prix }} €</p>
-
+    <div class="text-container">
+        <a href="tel:+123456789"><p>Ajouter au panier</p></a>
+    </div>
+</div>
+</div></div>
+</div>
 
 
 {% endblock %}
