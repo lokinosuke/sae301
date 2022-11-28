@@ -179,7 +179,7 @@
             <img src="{{ asset("assets/images/#{ manif.affiche }") }}" class="card-img-top card-img" alt="concert makala" height="200rem">
 
 
-            <div class="card-body">
+            <div class="card-body" href="{{ path("app_affichagedetail",{id:manif.id}) }}">
                 <h5 class="card-title text-start"> {{ manif.titre}} - {{ manif.derouler.lieu }}</h5>
                 <p class="card-text1 fs-6 text-start">{{ manif.date |date("d/m/Y H:i")}}</p>
                 <p class="card-text3 fs-2 text-start">{{ manif.prix }} €</p>
