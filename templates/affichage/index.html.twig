@@ -184,11 +184,25 @@
                 <p class="card-text1 fs-6 text-start">{{ manif.date |date("d/m/Y H:i")}}</p>
                 <p class="card-text3 fs-2 text-start">{{ manif.prix }} €</p>
                 <div class="text-container">
-                    <p class="card-text2 fs-6">Ajouter au panier</p>
+                    <a href="tel:+123456789"><p class="card-text2 fs-6">Ajouter au panier</p></a>
                 </div>
-                <div class="text-container2">
-                    <p class="card-text4 fs-6">{{ manif.genre }}</p>
-                </div>
+                {% if manif.genre == 'Théâtre' %}
+                    <div class="text-container5">
+                        <p class="card-text4 fs-6">{{ manif.genre }}</p>
+                    </div>
+                {% elseif manif.genre == 'Cinéma' %}
+                    <div class="text-container4">
+                        <p class="card-text4 fs-6">{{ manif.genre }}</p>
+                    </div>
+                {% elseif manif.genre == 'Concert' %}
+                    <div class="text-container2">
+                        <p class="card-text4 fs-6">{{ manif.genre }}</p>
+                    </div>
+                {% elseif manif.genre == 'Exposition' %}
+                    <div class="text-container3">
+                        <p class="card-text4 fs-6">{{ manif.genre }}</p>
+                    </div>
+                {% endif %}
 
                 <a href="{{ path("app_affichagedetail",{id:manif.id}) }}">voir detail</a>
             </div>
