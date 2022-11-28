@@ -15,6 +15,12 @@
             border-radius: 15px;
             width: 100px;
         }
+        .link-container2 {
+            background-color: #3EB57C;
+            border-radius: 15px;
+            width: 200px;
+            padding: 5px;
+        }
 
         .txt-container2 > p {
             text-align: center;
@@ -31,6 +37,12 @@
             border-radius: 15px;
             width: 100px;
         }
+        .link-container3 {
+            background-color: #3E8AB5;
+            border-radius: 15px;
+            width: 200px;
+            padding: 5px;
+        }
         .txt-container3 > p {
             text-align: center;
             margin: 0;
@@ -40,6 +52,13 @@
             background-color: #B53E3E;
             border-radius: 15px;
             width: 100px;
+        }
+
+        .link-container4 {
+            background-color: #B53E3E;
+            border-radius: 15px;
+            width: 200px;
+            padding: 5px;
         }
         .txt-container4 > p {
             text-align: center;
@@ -51,6 +70,12 @@
             background-color: #784F86;
             border-radius: 15px;
             width: 100px;
+        }
+        .link-container5 {
+            background-color: #784F86;
+            border-radius: 15px;
+            width: 200px;
+            padding: 5px;
         }
         .txt-container5 > p {
             text-align: center;
@@ -96,8 +121,17 @@ h5 {
     padding: 4rem;
 }
 
-.carddetail {
+.buttonbas {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
+.continuerachat {
+    border: 1px solid #FFFFFF;
+    border-radius: 15px;
+    width: 200px;
+    padding: 5px;
 }
     </style>
 <div class="sectionundetail">
@@ -139,12 +173,34 @@ h5 {
                     <p>{{ manif.description}} </p>
     </div>
                 <p>{{ manif.prix }} €</p>
-    <div class="text-container">
-        <a href="tel:+123456789" style="text-align: center"><p>Ajouter au panier</p></a>
+        <div class="buttonbas">
+            <a class="continuerachat" href="tel:+123456789" style="text-align: center; text-decoration: none;"><p style=" margin: 0px;text-decoration: none;color: white;">Continuer les achats</p></a>
+    <div class="link-container">
+
+        {% if manif.genre == 'Théâtre' %}
+            <div class="link-container5" >
+                <a href="tel:+123456789" style="text-align: center; text-decoration: none;"><p style="margin: 0px;text-decoration: none;color: white;">Ajouter au panier</p></a>
+            </div>
+        {% elseif manif.genre == 'Cinéma' %}
+            <div class="link-container4">
+                <a href="tel:+123456789" style="text-align: center; text-decoration: none;"><p style="margin: 0px;text-decoration: none;color: white;">Ajouter au panier</p></a>
+            </div>
+        {% elseif manif.genre == 'Concert' %}
+            <div class="link-container2">
+                <a href="tel:+123456789" style="text-align: center; text-decoration: none;"><p style="margin: 0px;text-decoration: none;color: white;">Ajouter au panier</p></a>
+            </div>
+        {% elseif manif.genre == 'Exposition' %}
+            <div class="link-container3">
+                <a href="tel:+123456789" style="text-align: center; text-decoration: none;"><p style="margin: 0px;text-decoration: none;color: white;">Ajouter au panier</p></a>
+            </div>
+        {% endif %}
     </div>
+
+        </div>
 </div>
-</div></div>
 </div>
+</div>
+
 
 
 {% endblock %}
