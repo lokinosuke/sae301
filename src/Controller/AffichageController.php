@@ -19,7 +19,7 @@ class AffichageController extends AbstractController
         ]);
     }
 
-    #[Route('/affichage/{id}', name: 'app_affichagedetail')]
+    #[Route('/Affichage/{id}', name: 'app_affichagedetail')]
     public function indexdetail(Manif $manif,$id): Response
     {
         return $this->render('Affichage/indexdetail.html.twig', [
