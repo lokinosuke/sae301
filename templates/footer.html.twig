@@ -1,3 +1,40 @@
+<style>
+    /* footer */
+    footer {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: black;
+    }
+    footer p {
+        color: white;
+        margin-bottom: 0px;
+    }
+
+
+    .linkfooter a {
+        text-decoration: none;
+        color: rgb(133, 133, 133);
+        margin: 5px;
+    }
+
+    @media (max-width:690px) {
+        footer {
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            height: fit-content;
+        }
+
+        .linkfooter {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+</style>
+
 
 <footer>
     <div class="linkfooter">
