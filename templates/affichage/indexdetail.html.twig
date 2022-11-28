@@ -4,39 +4,58 @@
 
 {% block body %}
     <style>
-        .text-container {
-            margin-left: 20px;
+        .txt-container {
             background-color: black;
             border-radius: 15px;
             width: 180px;
         }
 
-        .text-container2 {
-            margin-left: 20px;
+        .txt-container2 {
             background-color: #3EB57C;
             border-radius: 15px;
             width: 100px;
         }
 
-        .text-container3 {
-            margin-left: 20px;
+        .txt-container2 > p {
+            text-align: center;
+            margin: 0;
+            padding: 5px;
+        }
+        .txt-container > p {
+            text-align: center;
+            margin: 0;
+            padding: 5px;
+        }
+        .txt-container3 {
             background-color: #3E8AB5;
             border-radius: 15px;
             width: 100px;
         }
-
-        .text-container4 {
-            margin-left: 20px;
+        .txt-container3 > p {
+            text-align: center;
+            margin: 0;
+            padding: 5px;
+        }
+        .txt-container4 {
             background-color: #B53E3E;
             border-radius: 15px;
             width: 100px;
         }
+        .txt-container4 > p {
+            text-align: center;
+            margin: 0;
+            padding: 5px;
+        }
 
-        .text-container5 {
-            margin-left: 20px;
+        .txt-container5 {
             background-color: #784F86;
             border-radius: 15px;
             width: 100px;
+        }
+        .txt-container5 > p {
+            text-align: center;
+            margin: 0;
+            padding: 5px;
         }
 .genrecast {
     display: flex;
@@ -74,7 +93,7 @@ h5 {
     height: min-content;
     color: white;
     border-radius: 50px 50px 0px 0px;
-    padding: 2rem;
+    padding: 4rem;
 }
 
 .carddetail {
@@ -86,23 +105,23 @@ h5 {
     <div class="alldetail">
     <div class="genrecast">
         {% if manif.genre == 'Théâtre' %}
-            <div class="text-container5">
-                <p class="card-text4">{{ manif.genre }}</p>
+            <div class="txt-container5">
+                <p>{{ manif.genre }}</p>
             </div>
         {% elseif manif.genre == 'Cinéma' %}
-            <div class="text-container4">
-                <p class="card-text4">{{ manif.genre }}</p>
+            <div class="txt-container4">
+                <p>{{ manif.genre }}</p>
             </div>
         {% elseif manif.genre == 'Concert' %}
-            <div class="text-container2">
-                <p class="card-text4">{{ manif.genre }}</p>
+            <div class="txt-container2">
+                <p>{{ manif.genre }}</p>
             </div>
         {% elseif manif.genre == 'Exposition' %}
-            <div class="text-container3">
-                <p class="card-text4">{{ manif.genre }}</p>
+            <div class="txt-container3">
+                <p>{{ manif.genre }}</p>
             </div>
         {% endif %}
-                <p>{{ manif.casting }}</p>
+                <p style="margin: 0px">Avec : {{ manif.casting }}</p>
     </div>
     <div>
                 <h5 > {{ manif.titre}} </h5>
@@ -121,7 +140,7 @@ h5 {
     </div>
                 <p>{{ manif.prix }} €</p>
     <div class="text-container">
-        <a href="tel:+123456789"><p>Ajouter au panier</p></a>
+        <a href="tel:+123456789" style="text-align: center"><p>Ajouter au panier</p></a>
     </div>
 </div>
 </div></div>
