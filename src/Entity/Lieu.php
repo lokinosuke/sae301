@@ -16,7 +16,7 @@ class Lieu
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $lieu = null;
+    private ?string $Lieu = null;
 
     #[ORM\Column(length: 255)]
     private ?string $capacite = null;
@@ -39,12 +39,12 @@ class Lieu
 
     public function getLieu(): ?string
     {
-        return $this->lieu;
+        return $this->Lieu;
     }
 
-    public function setLieu(string $lieu): self
+    public function setLieu(string $Lieu): self
     {
-        $this->lieu = $lieu;
+        $this->Lieu = $Lieu;
 
         return $this;
     }

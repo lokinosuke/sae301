@@ -37,7 +37,7 @@ class Manif
 
     #[ORM\ManyToOne(inversedBy: 'manifs')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?lieu $derouler = null;
+    private ?Lieu $derouler = null;
 
     public function getId(): ?int
     {
@@ -128,12 +128,12 @@ class Manif
         return $this;
     }
 
-    public function getDerouler(): ?lieu
+    public function getDerouler(): ?Lieu
     {
         return $this->derouler;
     }
 
-    public function setDerouler(?lieu $derouler): self
+    public function setDerouler(?Lieu $derouler): self
     {
         $this->derouler = $derouler;
 
