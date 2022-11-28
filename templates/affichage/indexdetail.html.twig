@@ -173,11 +173,8 @@
 
     </style>
 
-    <div class="card-container">
-{% for manif in manifs %}
-        <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
             <img src="{{ asset("assets/images/#{ manif.affiche }") }}" class="card-img-top card-img" alt="concert makala" height="200rem">
-            <div class="card-body">
+
                 <h5 class="card-title text-start"> {{ manif.titre}} - {{ manif.derouler.lieu }}</h5>
                 <p class="card-text1 fs-6 text-start">{{ manif.date |date("d/m/Y H:i")}}</p>
                 <p class="card-text3 fs-2 text-start">{{ manif.prix }} €</p>
@@ -187,12 +184,5 @@
                 <div class="text-container2">
                     <p class="card-text4 fs-6">{{ manif.genre }}</p>
                 </div>
-
-                <a href="{{ path("app_affichagedetail",{id:manif.id}) }}">VOIR DETAIL</a>
             </div>
-        </div>
-{% endfor %}
-    </div>
-
-    </div>
 {% endblock %}
