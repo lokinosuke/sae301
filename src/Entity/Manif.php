@@ -141,6 +141,6 @@ class Manif
     }
     public function __toString(): string
     {
-        return $this->libelle;
+        return $this->titre;
     }
 }
