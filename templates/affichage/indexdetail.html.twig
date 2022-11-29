@@ -4,6 +4,10 @@
 
 {% block body %}
     <style>
+
+        * {
+            caret-color: transparent;
+        }
         .txt-container {
             background-color: black;
             border-radius: 15px;
@@ -106,6 +110,10 @@ h5 {
     margin-bottom: 30px;
 }
 
+.p-detail {
+    display: flex;
+}
+
 .sectionundetail {
     min-height:100vh ;
     background-image: url("{{ asset("assets/images/#{ manif.affiche }") }}");
@@ -183,10 +191,10 @@ h5 {
     </div>
     <div class="detail">
                  <div>
-                <p ><box-icon name='time-five' id='time-five' color='#ffffff'></box-icon>{{ manif.date |date("d/m/Y H:i")}}</p>
+                <p class="p-detail"><box-icon name='time-five' id='time-five' color='#ffffff'></box-icon>{{ manif.date |date("d/m/Y H:i")}}</p>
                  </div>
                 <div class="lieuadr">
-                <p><box-icon name='map' id='map' color='#ffffff'></box-icon>{{ manif.derouler.lieu }}, {{ manif.derouler.adresse}} </p>
+                <p class="p-detail"><box-icon name='map' id='map' color='#ffffff'></box-icon>{{ manif.derouler.lieu }}, {{ manif.derouler.adresse}} </p>
                 </div>
     </div>
     <div>
