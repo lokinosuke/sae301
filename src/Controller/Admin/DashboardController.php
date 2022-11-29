@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Lieu;
 use App\Entity\Manif;
+use App\Entity\Client;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -38,14 +39,21 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Sae301');
+            ->setTitle('SAE301')
+            ->setFaviconPath("fa-solid fa-gear")
+            ->setLocales(['en', 'fr']);
     }
 
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Manif', 'fas fa-list', Manif::class);
-        yield MenuItem::linkToCrud('lieu', 'fas fa-list', Lieu::class);
+
+        yield MenuItem::section('manifestation');
+        yield MenuItem ::linkToCrud('Manif', 'fas fa-ticket', Manif::class);
+        yield MenuItem::linkToCrud('lieu', 'fas fa-location-dot', Lieu::class);
+
+        yield MenuItem::section('Users');
+        yield MenuItem::linkToCrud('client', 'fas fa-user', Client::class);
 
     }
 }

@@ -15,4 +15,7 @@ class PanierController extends AbstractController
             'controller_name' => 'PanierController',
         ]);
     }
+
+
+
 }
