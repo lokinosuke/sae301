@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'basevariant.html.twig' %}
 
 {% block title %}Mon panier{% endblock %}
 
@@ -93,25 +93,28 @@
         padding-bottom: 2rem;
     }
 
+    a {
+        text-decoration: none;
+    }
 
-    @media (max-width: 640px) {
-        .card {
-            display: flex;
-            margin: 0 auto;
-            margin-top: 20px;
-            width: 22rem;
-        }
+    .card.rounded-5.overflow-hidden.shadow-sm {
+        width: 25rem;
+    }
+
+    @media only screen and (max-width: 600px) {
 
         .card-container {
             display: flex;
             margin: 0 auto;
             flex-wrap: wrap;
+            width: 30rem;
         }
 
-        .panier-achat {
-            margin-top: 30px;
+        .card.rounded-5.overflow-hidden.shadow-sm {
+            width: 35rem;
         }
     }
+
 </style>
 
     <h1 class="panier-title2">Votre panier (2)</h1>
@@ -119,14 +122,18 @@
             <div class="card1">
             <div class="card-body">
                 <div class="card-container">
-                    <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
+                    <div class="card rounded-5 overflow-hidden shadow-sm">
                     <img src="https://www.stereolux.org/sites/default/files/styles/auto_1920/public/ged/carremakala_0.jpg?itok=x1OG7Xq1" class="card-img-top card-img" alt="concert makala" height="200rem">
                         <div class="card-body">
                         <h5 class="card-title text-start">Makala - Elysée Montmartre</h5>
                         <p class="card-text1 fs-6 text-start">22 Novembre 2022</p>
                         <p class="card-text3 fs-2 text-start">39€</p>
                         <div class="text-container">
-                            <p class="card-text2 fs-6">- 1 +</p>
+                            <p class="card-text2 fs-6">
+                                <a href="">-</a>
+                                1
+                                <a href="">+</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -138,7 +145,11 @@
                         <p class="card-text1 fs-6 text-start">06 décembre 2022</p>
                         <p class="card-text3 fs-2 text-start">25€</p>
                         <div class="text-container">
-                            <p class="card-text2 fs-6">- 2 +</p>
+                            <p class="card-text2 fs-6">
+                                <a href="">-</a>
+                                2
+                                <a href="">+</a>
+                            </p>
                         </div>
                     </div>
                 </div>
