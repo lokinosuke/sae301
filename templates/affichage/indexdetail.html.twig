@@ -90,6 +90,7 @@
 h5 {
     FONT-SIZE: 55px;
     font-weight: bold;
+    margin-top: 25px;
 }
 
 .lieuadr {
@@ -98,9 +99,11 @@ h5 {
     align-items: flex-start;
 }
 .detail {
-    gap: 30%;
+    gap: 10%;
     align-items: center;
     display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .sectionundetail {
@@ -119,12 +122,14 @@ h5 {
     color: white;
     border-radius: 50px 50px 0px 0px;
     padding: 4rem;
+    margin-top: 150px;
 }
 
 .buttonbas {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    margin-top: 50px;
+    gap: 2%;
 }
 
 .continuerachat {
@@ -133,6 +138,22 @@ h5 {
     width: 200px;
     padding: 5px;
 }
+
+#map {
+    margin-right: 5px;
+}
+
+#time-five {
+    margin-right: 5px;
+}
+
+#prix {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
     </style>
 <div class="sectionundetail">
 <div class="carddetail">
@@ -162,19 +183,17 @@ h5 {
     </div>
     <div class="detail">
                  <div>
-                <p >{{ manif.date |date("d/m/Y H:i")}}</p>
+                <p ><box-icon name='time-five' id='time-five' color='#ffffff'></box-icon>{{ manif.date |date("d/m/Y H:i")}}</p>
                  </div>
                 <div class="lieuadr">
-                <p> {{ manif.derouler.lieu }}</p>
-                <p>{{ manif.derouler.adresse}}</p>
+                <p><box-icon name='map' id='map' color='#ffffff'></box-icon>{{ manif.derouler.lieu }}, {{ manif.derouler.adresse}} </p>
                 </div>
     </div>
     <div>
                     <p>{{ manif.description}} </p>
     </div>
-                <p>{{ manif.prix }} €</p>
+                <p id="prix">{{ manif.prix }} €</p>
         <div class="buttonbas">
-            <a class="continuerachat" href="{{ path("app_affichage")}}" style="text-align: center; text-decoration: none;"><p style=" margin: 0px;text-decoration: none;color: white;">Continuer les achats</p></a>
     <div class="link-container">
 
         {% if manif.genre == 'Théâtre' %}
@@ -195,6 +214,7 @@ h5 {
             </div>
         {% endif %}
     </div>
+            <a class="continuerachat" href="{{ path("app_affichage")}}" style="text-align: center; text-decoration: none;"><p style=" margin: 0px;text-decoration: none;color: white;">Continuer mes achats</p></a>
 
         </div>
 </div>
