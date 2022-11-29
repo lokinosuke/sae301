@@ -28,7 +28,7 @@
         padding: 20px 20px 20px 40px;
     }
 
-    .btn {
+    .btn-nav {
         border-radius: 50px;
         background-color: black;
     }
@@ -56,10 +56,10 @@
                 <a class="nav-link text-white" href="{{ path('app_affichage') }}">Billeterie</a>
             </li>
                 <li class="nav-item">
-                    <button class="btn" type="button"><a class="nav-link text-white" href="{{ path('app_login') }}">LOG IN</a></button>
+                    <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_login') }}">LOG IN</a></button>
                 </li>
                 <li class="nav-item">
-                    <button class="btn" type="button"><a class="nav-link text-white" href="{{ path('app_panier') }}">MON PANIER  <span class="badge badge-pill">0</span></a>
+                    <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_panier') }}">MON PANIER  <span class="badge badge-pill">0</span></a>
                     </button>
                 </li>
         </ul>

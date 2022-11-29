@@ -3,167 +3,68 @@
 {% block title %}Mon panier{% endblock %}
 
 {% block body %}
-<style>
 
-    .card-container {
-        display: flex;
-        margin: 0 auto;
-        flex-wrap: wrap;
-        width: 80%;
-    }
-
-    .card-img {
-        object-fit: cover;
-    }
-
-    .card-title {
-        padding-left: 20px;
-        font-weight: bold;
-    }
-
-    .card {
-        display: flex;
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-
-    .card-text1 {
-        padding-left: 20px;
-        color: gray;
-        font-weight: bold;
-    }
-
-    .text-container {
-        margin-left: 20px;
-        background-color: black;
-        border-radius: 15px;
-        width: 100px;
-    }
-
-    .card-text2 {
-        letter-spacing: 5px;
-        text-align: center;
-        color: white;
-        font-weight: bold;
-    }
-
-    .card-text3 {
-        padding-left: 20px;
-        font-weight: bold;
-    }
-
-    .btn {
-        background-color: black;
-    }
-
-    .card-title1 {
-        margin: 40px;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    .card1 {
-        margin: 50px 100px 50px 100px;
-    }
-
-    .panier-title {
-        text-align: center;
-        font-weight: normal;
-    }
-
-    .panier-achat {
-        margin: 0 auto;
-        padding-left: 0px;
-        margin-bottom: 20px;
-    }
-
-    .panier-p {
-        font-size: small;
-        color: grey;
-    }
-
-    .btn {
-        display: flex;
-        border-radius: 20px;
-        text-align: center;
-    }
-
-    .panier-title2 {
-        padding-top: 10rem;
-        padding-bottom: 2rem;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    .card.rounded-5.overflow-hidden.shadow-sm {
-        width: 25rem;
-    }
-
-    @media only screen and (max-width: 600px) {
-
-        .card-container {
-            display: flex;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            width: 30rem;
+    <style>
+        .btn-panier {
+            background-color: #784F86;
+            margin-right: 10px;
         }
 
-        .card.rounded-5.overflow-hidden.shadow-sm {
-            width: 35rem;
+        .btn-panier:hover {
+            background-color: #784f867b;
         }
-    }
 
-</style>
+        h3 {
+            text-align: center;
+        }
 
-    <h1 class="panier-title2">Votre panier (2)</h1>
-        <div class="card rounded-5 shadow big-card">
-            <div class="card1">
-            <div class="card-body">
-                <div class="card-container">
-                    <div class="card rounded-5 overflow-hidden shadow-sm">
-                    <img src="https://www.stereolux.org/sites/default/files/styles/auto_1920/public/ged/carremakala_0.jpg?itok=x1OG7Xq1" class="card-img-top card-img" alt="concert makala" height="200rem">
+    </style>
+
+    <section class="h-100" style="background-color: #eee;">
+        <div class="container h-100 py-5">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-10">
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="fw-normal mb-0 text-black">Vos articles</h3>
+                    </div>
+
+                    <div class="card rounded-3 mb-4">
+                        <div class="card-body p-4">
+                            <div class="row d-flex justify-content-between align-items-center">
+                                <div class="col-md-2 col-lg-2 col-xl-2">
+                                    <img
+                                            src="https://www.stereolux.org/sites/default/files/styles/auto_1920/public/ged/carremakala_0.jpg?itok=x1OG7Xq1"
+                                            class="img-fluid rounded-3" alt="Concert">
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-3">
+                                    <p class="lead fw-normal mb-2">Makala</p>
+                                    <p><span class="text-muted">Date: </span>? <span class="text-muted">Lieu: </span>?</p>
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                    <input id="form1" min="0" name="quantity" value="1" type="number"
+                                           class="form-control form-control-sm" />
+                                </div>
+                                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                    <h5 class="mb-0">€29</h5>
+                                </div>
+                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                    <a href="#!" class="text-danger"><box-icon name='trash-alt' type='solid' color='#f56c6c' ></box-icon></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
                         <div class="card-body">
-                        <h5 class="card-title text-start">Makala - Elysée Montmartre</h5>
-                        <p class="card-text1 fs-6 text-start">22 Novembre 2022</p>
-                        <p class="card-text3 fs-2 text-start">39€</p>
-                        <div class="text-container">
-                            <p class="card-text2 fs-6">
-                                <a href="">-</a>
-                                1
-                                <a href="">+</a>
-                            </p>
+                            <button type="button" class="btn btn-block btn-lg btn-panier text-white">Procéder au paiment</button>
+                            <button type="button" class="btn btn-light btn-block btn-lg">Continuer vos achats</button>
                         </div>
+
                     </div>
-                </div>
 
-                <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
-                    <img src="https://www.worldartfoundations.com/wp-content/uploads/2021/09/411307_b5a8bc072878835a6bc3c6b026748f21.jpg" class="card-img-top card-img" alt="bianca" height="200rem">
-                    <div class="card-body">
-                        <h5 class="card-title text-start">Open Space #8 Bianca Bondi</h5>
-                        <p class="card-text1 fs-6 text-start">06 décembre 2022</p>
-                        <p class="card-text3 fs-2 text-start">25€</p>
-                        <div class="text-container">
-                            <p class="card-text2 fs-6">
-                                <a href="">-</a>
-                                2
-                                <a href="">+</a>
-                            </p>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="panier-achat">
-                    <h5 class="panier-title">Total: €89</h5>
-                    <h5 class="panier-p">Toutes charges incluses</h5>
-                    <a href="#" class="btn btn-primary">Acheter</a>
-                    <a href="#" class="btn btn-primary">Continuer les achats</a>
-                </div>
-
             </div>
         </div>
-            </div>
-    </div>
-    </div>
+    </section>
 {% endblock %}
