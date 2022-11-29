@@ -16,7 +16,7 @@ class Lieu
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $Lieu = null;
+    private ?string $Endroit = null;
 
     #[ORM\Column(length: 255)]
     private ?string $capacite = null;
@@ -37,14 +37,14 @@ class Lieu
         return $this->id;
     }
 
-    public function getLieu(): ?string
+    public function getEndroit(): ?string
     {
-        return $this->Lieu;
+        return $this->Endroit;
     }
 
-    public function setLieu(string $Lieu): self
+    public function setEndroit(string $Endroit): self
     {
-        $this->Lieu = $Lieu;
+        $this->Endroit = $Endroit;
 
         return $this;
     }
@@ -101,5 +101,9 @@ class Lieu
         }
 
         return $this;
+    }
+    public function __toString(): string
+    {
+        return $this->Endroit;
     }
 }
