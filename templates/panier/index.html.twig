@@ -4,6 +4,23 @@
 
 {% block body %}
 
+    <script>
+        window.onload=function(){
+            var bouton = document.getElementById('test');
+            var div = document.getElementById('showdiv');
+            bouton.onclick = function(e){
+                if(div.style.display=="none"){
+                    div.style.display="block";
+                }
+                else{
+                    div.style.display="none";
+                }
+            };
+        };
+
+
+    </script>
+
     <style>
         .btn-panier {
             background-color: #784F86;
@@ -25,6 +42,10 @@
 
         .adresse-card {
             margin-top: 30px;
+        }
+
+        #showdiv {
+            display: none;
         }
 
     </style>
@@ -64,17 +85,14 @@
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h3 class="fw-normal mb-0 text-black">Paiment</h3>
-                    </div>
-
                     <div class="card">
                         <div class="card-body">
-                            <button type="button" id="test" class="btn btn-block btn-lg btn-panier text-white">Procéder au paiment</button>
-                            <button type="button" class="btn btn-light btn-block btn-lg" ><a href="{{ path('app_affichage') }}">Continuez vos achats</a></button>
+                            <button type="button" id="test" class="btn btn-block btn-lg btn-panier text-white">Passer à la facturation</button>
+                            <button type="button" class="btn btn-light btn-block btn-lg" ><a href="{{ path('app_affichage') }}">Continuer vos achats</a></button>
                         </div>
                     </div>
 
+                    <div id="showdiv">
                     <div class="card adresse-card">
                     <div class="card-body">
                         <div class="row">
@@ -197,6 +215,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
