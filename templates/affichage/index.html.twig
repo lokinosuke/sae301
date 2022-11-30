@@ -196,10 +196,15 @@
             <div class="card-body" href="{{ path("app_affichagedetail",{id:manif.id}) }}">
                 <h5 class="card-title text-start" id="article">{{ manif.titre}} - {{ manif.derouler.endroit }}</h5>
                 <p class="card-text1 fs-6 text-start">{{ manif.date |date("d/m/Y H:i")}}</p>
-                <p class="card-text3 fs-2 text-start" id="prix">{{ manif.prix }}€</p>
+                {% if manif.prix == '0.00' %}
+                    <p class="card-text3 fs-2 text-start" id="prix">GRATUIT</p>
+                {% else %}
+                    <p class="card-text3 fs-2 text-start" id="prix">{{ manif.prix }}€</p>
+                {% endif %}
                 <div class="text-container">
                     <a href="{{ path("app_affichagedetail",{id:manif.id}) }}"><p class="card-text2 fs-6">Voir les details</p></a>
                 </div>
+
                 {% if manif.genre == 'Théâtre' %}
                     <div class="text-container5">
                         <p class="card-text4 fs-6">{{ manif.genre }}</p>
