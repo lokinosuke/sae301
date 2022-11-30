@@ -94,104 +94,104 @@
                         </div>
                     </div>
 
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>article</th>
-                                    <th>quantite</th>
-                                    <th>prix unitaire</th>
-                                    <th>prix total</th>
-                                </tr>
-                            <thead>
-                            <tbody id="zone"></tbody>
-                            <tfoot>
-                            <tr>
-                                <td id="bas" colspan="3"></td>
-                                <td><span id="total">0</span>€</td>
-                            </tr>
-                            </tfoot>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>article</th>
+                            <th>quantite</th>
+                            <th>prix unitaire</th>
+                            <th>prix total</th>
+                        </tr>
+                        <thead>
+                        <tbody id="zone"></tbody>
+                        <tfoot>
+                        <tr>
+                            <td id="bas" colspan="3"></td>
+                            <td><span id="total">0</span>€</td>
+                        </tr>
+                        </tfoot>
                         <table/>
 
 
-                    <div id="showdiv">
-                    <div class="card adresse-card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-8 order-md-1">
-                                <h4 class="mb-3" style="margin-bottom: 10px">Adresse de facturation</h4>
-                                <form class="needs-validation" novalidate>
+                        <div id="showdiv">
+                            <div class="card adresse-card">
+                                <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <label for="prenom">Nom</label>
-                                            <input type="text" class="form-control" id="firstName" placeholder="Jean" value="" required>
-                                            <div class="invalid-feedback">
-                                                Veuillez indiquer un prénom.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label for="nom">Nom</label>
-                                            <input type="text" class="form-control" id="lastName" placeholder="Dupont" value="" required>
-                                            <div class="invalid-feedback">
-                                                Veuillez indiquer un nom.
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <div class="col-md-8 order-md-1">
+                                            <h4 class="mb-3" style="margin-bottom: 10px">Adresse de facturation</h4>
+                                            <form class="needs-validation" novalidate>
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="prenom">Nom</label>
+                                                        <input type="text" class="form-control" id="firstName" placeholder="Jean" value="" required>
+                                                        <div class="invalid-feedback">
+                                                            Veuillez indiquer un prénom.
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="nom">Nom</label>
+                                                        <input type="text" class="form-control" id="lastName" placeholder="Dupont" value="" required>
+                                                        <div class="invalid-feedback">
+                                                            Veuillez indiquer un nom.
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                    <div class="mb-3">
-                                        <label for="email">Email <span class="text-muted">(Vous recevrez votre ticket par mail.)</span></label>
-                                        <input type="email" class="form-control" id="email" placeholder="jeandupont@exemple.com">
-                                        <div class="invalid-feedback">
-                                            Veuillez indiquer une adresse mail valide.
-                                        </div>
-                                    </div>
+                                                <div class="mb-3">
+                                                    <label for="email">Email <span class="text-muted">(Vous recevrez votre ticket par mail.)</span></label>
+                                                    <input type="email" class="form-control" id="email" placeholder="jeandupont@exemple.com">
+                                                    <div class="invalid-feedback">
+                                                        Veuillez indiquer une adresse mail valide.
+                                                    </div>
+                                                </div>
 
-                                    <div class="mb-3">
-                                        <label for="adresse">Adresse</label>
-                                        <input type="text" class="form-control" id="adresse" placeholder="9 rue du Quebec" required>
-                                        <div class="invalid-feedback">
-                                            Veuillez indiquer une adresse.
-                                        </div>
-                                    </div>
+                                                <div class="mb-3">
+                                                    <label for="adresse">Adresse</label>
+                                                    <input type="text" class="form-control" id="adresse" placeholder="9 rue du Quebec" required>
+                                                    <div class="invalid-feedback">
+                                                        Veuillez indiquer une adresse.
+                                                    </div>
+                                                </div>
 
-                                    <div class="mb-3">
-                                        <label for="adresse2">Adresse 2 <span class="text-muted">(Optionnel)</span></label>
-                                        <input type="text" class="form-control" id="adresse2" placeholder="N° Appartement">
-                                    </div>
+                                                <div class="mb-3">
+                                                    <label for="adresse2">Adresse 2 <span class="text-muted">(Optionnel)</span></label>
+                                                    <input type="text" class="form-control" id="adresse2" placeholder="N° Appartement">
+                                                </div>
 
-                                    <div class="row">
-                                        <div class="col-md-3 mb-3">
-                                            <label for="zip">Code postal</label>
-                                            <input type="text" class="form-control" id="zip" placeholder="10000" required>
-                                            <div class="invalid-feedback">
-                                                Veuillez indiquer un code postal.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 mb-3">
-                                            <label for="pays">Pays</label>
-                                            <select class="custom-select d-block w-100" id="pays" required>
-                                                <option value="">Choisir...</option>
-                                                <option>France</option>
-                                            </select>
-                                            <div class="invalid-feedback">
-                                                Veuillez sélectionner un pays.
-                                            </div>
+                                                <div class="row">
+                                                    <div class="col-md-3 mb-3">
+                                                        <label for="zip">Code postal</label>
+                                                        <input type="text" class="form-control" id="zip" placeholder="10000" required>
+                                                        <div class="invalid-feedback">
+                                                            Veuillez indiquer un code postal.
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5 mb-3">
+                                                        <label for="pays">Pays</label>
+                                                        <select class="custom-select d-block w-100" id="pays" required>
+                                                            <option value="">Choisir...</option>
+                                                            <option>France</option>
+                                                        </select>
+                                                        <div class="invalid-feedback">
+                                                            Veuillez sélectionner un pays.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="mb-4">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="newslatter">
+                                                    <label class="custom-control-label" for="save-info">J'accepte de recevoir des offres et des réductions par mail.</label>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
-                                    <hr class="mb-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="newslatter">
-                                        <label class="custom-control-label" for="save-info">J'accepte de recevoir des offres et des réductions par mail.</label>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    </div>
 
 
-                    <div class="card adresse-card">
-                        <div class="card-body">
-                                <h4 class="mb-3">Paiment</h4>
+                            <div class="card adresse-card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">Paiment</h4>
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="cc-name">Nom</label>
@@ -229,14 +229,10 @@
                                         <input type="hidden" name="liste" id="liste">
                                         <button style="margin-top:20px" class="btn btn-primary btn-lg btn-block" type="submit">Valider ma commande</button>
                                     </form>
-                                </form>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                </div> </div> </div>
+
     </section>
 {% endblock %}

@@ -84,9 +84,7 @@
                             <p class="text-center mx-3 mb-0 text-muted" style="margin-top: 20px;color:#666666;">Pas encore de compte ?</p>
                         </div>
 
-                        <a class="btn btn-primary btn-lg btn-block" style="background-color: #1B202C;border: black;width: 100%;" href="#!"
-                           role="button">
-                            <i class="fab fa-facebook-f me-2"></i>Créer un compte</a>
+                        <a class="btn btn-primary btn-lg btn-block" style="background-color: #1B202C;border: black;width: 100%;" href="{{ path('app_signin') }}"  role="button"> Créer un compte</a>
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 

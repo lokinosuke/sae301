@@ -74,6 +74,5 @@ function clickmoins(tag){
         })
         return sortie
     }
-    }
-
+}
 

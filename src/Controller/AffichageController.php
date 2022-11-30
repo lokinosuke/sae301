@@ -27,4 +27,5 @@ class AffichageController extends AbstractController
             'manif' => $manif
         ]);
     }
+
 }
