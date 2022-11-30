@@ -6,6 +6,7 @@ console.log(montab)
 var panier = 0
 montab.forEach(element => {   panier += element.quantite })
 document.getElementById('panier').innerHTML=panier
+console.log(montab)
 
 function recupCookie(nom){
 
