@@ -17,8 +17,6 @@
                 }
             };
         };
-
-
     </script>
 
     <style>
@@ -68,15 +66,18 @@
                                             class="img-fluid rounded-3" alt="Concert">
                                 </div>
                                 <div class="col-md-3 col-lg-3 col-xl-3">
-                                    <p class="lead fw-normal mb-2">Makala</p>
+                                    <p class="lead fw-normal mb-2"></p>
                                     <p><span class="text-muted">Date: </span>? <span class="text-muted">Lieu: </span>?</p>
                                 </div>
                                 <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                    <input id="form1" min="0" name="quantity" value="1" type="number"
-                                           class="form-control form-control-sm" />
+                                    <div class="input-group w-auto justify-content-end align-items-center">
+                                        <input type="button" value="-" class="button-minus border rounded-circle icon-shape icon-sm mx-1" data-field="quantity">
+                                        <input type="number" step="1" max="10" value="1" name="quantity" class="quantity-field border-0 text-center w-25">
+                                        <input type="button" value="+" class="button-plus border rounded-circle icon-shape icon-sm" data-field="quantity">
+                                    </div>
                                 </div>
                                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                    <h5 class="mb-0">€29</h5>
+                                    <h5 class="mb-0">0€</h5>
                                 </div>
                                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                                     <a href="#!" class="text-danger"><box-icon name='trash-alt' type='solid' color='#f56c6c' ></box-icon></a>
@@ -92,28 +93,26 @@
                             <button type="button" class="btn btn-light btn-block btn-lg" ><a href="{{ path('app_affichage') }}">Continuer vos achats</a></button>
                         </div>
                     </div>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>article</th>
-                            <th>quantite</th>
-                            <th>prix unitaire</th>
-                            <th>prix total</th>
-                        </tr>
-                        <thead>
-                        <tbody id="zone">
 
-
-
-                        </tbody>
-                        <tfoot><tr><td id="bas" colspan="3"></td><td><span id="total">0</span>€</td></tr></tfoot>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>article</th>
+                                    <th>quantite</th>
+                                    <th>prix unitaire</th>
+                                    <th>prix total</th>
+                                </tr>
+                            <thead>
+                            <tbody id="zone"></tbody>
+                            <tfoot>
+                            <tr>
+                                <td id="bas" colspan="3"></td>
+                                <td><span id="total">0</span>€</td>
+                            </tr>
+                            </tfoot>
                         <table/>
-                        <hr>
-                        <form action="{{ path('app_finalisation') }}" method="post">
-                            <input type="hidden" name="liste" id="liste">
-                            <input type="submit" value="Valider ma commande.">
-                        </form>
-                        <hr>
+
+
                     <div id="showdiv">
                     <div class="card adresse-card">
                     <div class="card-body">
@@ -225,14 +224,11 @@
                                                 Le code de sécurité est requis.
                                             </div>
                                         </div>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Code promo">
-                                                <div class="input-group-append">
-                                                    <button type="submit" class="btn btn-secondary">Appliquer</button>
-                                                </div>
-                                            </div>
                                     </div>
-                                    <button style="margin-top:20px" class="btn btn-primary btn-lg btn-block" type="submit">Valider le paiement</button>
+                                    <form action="{{ path('app_finalisation') }}" method="post">
+                                        <input type="hidden" name="liste" id="liste">
+                                        <button style="margin-top:20px" class="btn btn-primary btn-lg btn-block" type="submit">Valider ma commande</button>
+                                    </form>
                                 </form>
                                 </div>
                             </div>

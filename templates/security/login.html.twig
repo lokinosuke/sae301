@@ -17,16 +17,21 @@
     {% endif %}
 
     <style>
-        .vh-100 {
-            background-image: url("{{ asset('assets/images/fondlogin.jpg')}}");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;">
+        .login {
+            background: rgb(1,82,151);
+            background: linear-gradient(135deg, rgba(1,82,151,1) 0%, rgba(254,163,207,1) 100%);
+
         }
-        .rightlogin {
-            position: absolute;
-            right: 0;
-            height: 100vh;
+
+        .right-container {
+            background-color: white;
+            padding: 100px;
+            border-radius: 50px 0px 0px 50px;
+        }
+
+        .title {
+            margin: 100px 0px 100px 0px;
+            text-align: center;
         }
 
         @media only screen and (min-width: 768px){
@@ -39,16 +44,16 @@
                 width: 100%;
             }}
     </style>
-    <section class="vh-100">
+    <section class="login">
         <!--  <img class="rightlogin" src="{{ asset('assets/images/rightlogin.png') }}" alt=""> -->
-        <div class="container py-5 h-100">
-            <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="container-login">
+            <div class="row d-flex align-items-center justify-content-center">
                 <div class="col-md-8 col-lg-7 col-xl-6">
-                    <p class="img-fluid fw-bold" style="font-size: 4rem; color: #FFFFFF">Votre compte, <br>
+                    <p class="img-fluid title fw-bold" style="font-size: 4rem; color: #FFFFFF">Votre compte, <br>
                         <span style="color: black">Vos envies. </span></p>
                 </div>
 
-                <div class="colmd7 col-lg-5 col-xl-5 offset-xl-1" style="z-index: 1;">
+                <div class="colmd7 col-lg-5 col-xl-5 offset-xl-1 right-container" style="z-index: 1;">
                     <div class="d-flex justify-content-around align-items-center mb-4" style="flex-direction: column;">
                     <p class="fw-bold" style="font-size: 50px;">Se connecter</p>
                     <p class="" style="color:#666666;font-size: 25px;">Accéder à votre compte</p>
@@ -81,7 +86,9 @@
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                     </form>
-                </div></div></div>
+                </div>
+            </div>
+        </div>
 
     </section>
 
