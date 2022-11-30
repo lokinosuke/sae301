@@ -3,7 +3,7 @@ document.getElementById('ajout').addEventListener('click',function() {
     var id = document.getElementById('id').value
     var article= document.getElementById('article').innerHTML
     var prix= document.getElementById('prix').innerHTML
-    console.log( id + "quantite" + article + prix )
+    console.log( id + " " +"quantite" + article + prix )
 
 
     index = montab.findIndex(element => element.id ==id); //trouver l'article dans la liste du panier
