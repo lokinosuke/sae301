@@ -87,11 +87,33 @@
 
                     <div class="card">
                         <div class="card-body">
+                            <input type="hidden" name="liste" id="liste">
                             <button type="button" id="test" class="btn btn-block btn-lg btn-panier text-white">Passer à la facturation</button>
                             <button type="button" class="btn btn-light btn-block btn-lg" ><a href="{{ path('app_affichage') }}">Continuer vos achats</a></button>
                         </div>
                     </div>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>article</th>
+                            <th>quantite</th>
+                            <th>prix unitaire</th>
+                            <th>prix total</th>
+                        </tr>
+                        <thead>
+                        <tbody id="zone">
 
+
+
+                        </tbody>
+                        <tfoot><tr><td id="bas" colspan="3"></td><td><span id="total">0</span>€</td></tr></tfoot>
+                        <table/>
+                        <hr>
+                        <form action="{{ path('app_finalisation') }}" method="post">
+                            <input type="hidden" name="liste" id="liste">
+                            <input type="submit" value="Valider ma commande.">
+                        </form>
+                        <hr>
                     <div id="showdiv">
                     <div class="card adresse-card">
                     <div class="card-body">

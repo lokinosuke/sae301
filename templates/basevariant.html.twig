@@ -12,7 +12,9 @@
         {% endblock %}
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            <script type="text/javascript" src="{{ asset('assets/js/scriptgeneral.js') }}" defer></script>
+            <script type="text/javascript" src="{{ asset('assets/js/scriptpagesarticles.js') }}" defer></script>
+            <script type="text/javascript" src="{{ asset('assets/js/scriptpanier.js') }}" defer></script>
         {% endblock %}
     </head>
     <body>

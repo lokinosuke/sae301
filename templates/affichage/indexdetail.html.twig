@@ -187,7 +187,7 @@ h5 {
                 <p style="margin: 0px">Avec : {{ manif.casting }}</p>
     </div>
     <div>
-                <h5 > {{ manif.titre}} </h5>
+                <h5 id="article"> {{ manif.titre}} </h5>
     </div>
     <div class="detail">
                  <div>
@@ -200,25 +200,33 @@ h5 {
     <div>
                     <p>{{ manif.description}} </p>
     </div>
-                <p id="prix">{{ manif.prix }} €</p>
+                <p id="prix">{{ manif.prix }}</p>
         <div class="buttonbas">
     <div class="link-container">
 
         {% if manif.genre == 'Théâtre' %}
             <div class="link-container5" >
-                <a href="tel:+123456789" style="text-align: center; text-decoration: none;"><p style="margin: 0px;text-decoration: none;color: white;">Ajouter au panier</p></a>
+                <input type="number" value="1" min="1" max="99" id="qte">
+                <input type="hidden" id="id" value="{{ manif.id }}">
+                <a style="text-align: center; text-decoration: none;"><p style="margin: 0px;text-decoration: none;color: white;"id="ajout">Ajouter au panier</p></a>
             </div>
         {% elseif manif.genre == 'Cinéma' %}
             <div class="link-container4">
-                <a href="tel:+123456789" style="text-align: center; text-decoration: none;"><p style="margin: 0px;text-decoration: none;color: white;">Ajouter au panier</p></a>
+                <input type="number" value="1" min="1" max="99" id="qte">
+                <input type="hidden" id="id" value="{{ manif.id }}">
+                <a style="text-align: center; text-decoration: none;"><p style="margin: 0px;text-decoration: none;color: white;"id="ajout">Ajouter au panier</p></a>
             </div>
         {% elseif manif.genre == 'Concert' %}
             <div class="link-container2">
-                <a href="tel:+123456789" style="text-align: center; text-decoration: none;"><p style="margin: 0px;text-decoration: none;color: white;">Ajouter au panier</p></a>
+                <input type="number" value="1" min="1" max="99" id="qte">
+                <input type="hidden" id="id" value="{{ manif.id }}">
+                <a style="text-align: center; text-decoration: none;"id="ajout"><p style="margin: 0px;text-decoration: none;color: white;">Ajouter au panier</p></a>
             </div>
         {% elseif manif.genre == 'Exposition' %}
             <div class="link-container3">
-                <a href="tel:+123456789" style="text-align: center; text-decoration: none;"><p style="margin: 0px;text-decoration: none;color: white;">Ajouter au panier</p></a>
+                <input type="number" value="1" min="1" max="99" id="qte">
+                <input type="hidden" id="id" value="{{ manif.id }}">
+                <a style="text-align: center; text-decoration: none;"><p style="margin: 0px;text-decoration: none;color: white;" id="ajout">Ajouter au panier</p></a>
             </div>
         {% endif %}
     </div>
