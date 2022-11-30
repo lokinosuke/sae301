@@ -10,8 +10,8 @@ montab.forEach(uneinfo => {
     html = `<tr id="${uneinfo.id}">
     <td>${uneinfo.article}</td>
     <td><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">...</button></td>
-    <td ><span class="unitaire">.....</span>€</td>
-    <td><span class="prix">.</span>€</td>
+    <td ><span class="unitaire">${uneinfo.prix}</span>€</td>
+    <td><span class="prix">${uneinfo.prix}*${uneinfo.quantite}</span>€</td>
     </tr>`;
 
     document.getElementById('zone').innerHTML += html
