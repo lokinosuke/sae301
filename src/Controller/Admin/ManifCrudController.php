@@ -26,7 +26,7 @@ class ManifCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             TextField::new('titre'),
             TextEditorField::new('description'),
-            ImageField::new('affiche')->setBasePath('images/')->setUploadDir('public/assets/images/'),
+            ImageField::new('affiche')->setBasePath('images/')->setUploadDir('public/js/images/'),
             NumberField::new('prix'),
             TextField::new('genre'),
             TextField::new('casting'),

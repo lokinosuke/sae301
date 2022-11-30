@@ -7,12 +7,12 @@ document.getElementById('liste').value=JSON.stringify(montab); // sauver montab 
 var totalgeneral=0
 montab.forEach(uneinfo => {
 
-    html = `<tr id="${uneinfo.id}">
-    <td>${uneinfo.article}</td>
-    <td><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></td>
-    <td ><span class="unitaire">${uneinfo.prix}</span></td>
-    <td><span class="prix">${uneinfo.prix}*${uneinfo.quantite}</span></td>
-    </tr>`;
+    html = `<div id="${uneinfo.id}">
+    <div>${uneinfo.article}</div>
+    <div><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></div>
+    <div><span class="unitaire">${uneinfo.prix}</span></div>
+    <div><span class="prix">${uneinfo.prix}*${uneinfo.quantite}</span></div>
+    </div>`;
 
     document.getElementById('zone').innerHTML += html
     totalgeneral += uneinfo.prix * uneinfo.quantite
@@ -51,6 +51,9 @@ function clickmoins(tag){
         prix=this.parentNode.parentNode.querySelector('.unitaire').innerHTML;
         total= prix*qte;
         this.parentNode.parentNode.querySelector('.prix').innerHTML=total;
+
+        if (qte<0){qte--};
+
 
         id = this.parentNode.parentNode.id;
         index = montab.findIndex(element => element.id ==id);
