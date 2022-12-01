@@ -7,12 +7,11 @@
 
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        <br>
     {% endif %}
 
     {% if app.user %}
         <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
         </div>
     {% endif %}
 
@@ -84,7 +83,7 @@
                             <p class="text-center mx-3 mb-0 text-muted" style="margin-top: 20px;color:#666666;">Pas encore de compte ?</p>
                         </div>
 
-                        <a class="btn btn-primary btn-lg btn-block" style="background-color: #1B202C;border: black;width: 100%;" href="{{ path('app_signin') }}"  role="button"> Créer un compte</a>
+                        <a class="btn btn-primary btn-lg btn-block" style="background-color: #1B202C;border: black;width: 100%;" href="{{ path('app_registration') }}"  role="button"> Créer un compte</a>
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
