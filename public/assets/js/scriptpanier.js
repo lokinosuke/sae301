@@ -7,12 +7,15 @@ document.getElementById('liste').value=JSON.stringify(montab); // sauver montab 
 var totalgeneral=0
 montab.forEach(uneinfo => {
 
-    html = `<div id="${uneinfo.id}">
+    html = `
+    <div id="${uneinfo.id}">
     <div>${uneinfo.article}</div>
     <div><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></div>
     <div><span class="unitaire">${uneinfo.prix}</span></div>
     <div><span class="prix">${uneinfo.prix}*${uneinfo.quantite}</span></div>
-    </div>`;
+    </div>
+
+`;
 
     document.getElementById('zone').innerHTML += html
     totalgeneral += uneinfo.prix * uneinfo.quantite
