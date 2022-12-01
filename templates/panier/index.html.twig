@@ -8,25 +8,13 @@
         window.onload=function(){
             var bouton = document.getElementById('test');
             var div = document.getElementById('showdiv');
+
             bouton.onclick = function(){
                 if(div.style.display=="block"){
                     div.style.display="none";
                 }
                 else{
                     div.style.display="block";
-                }
-            };
-        };
-
-        window.onload=function(){
-            var bouton = document.getElementById('notconnected');
-            var div = document.getElementById('notconnecteddiv');
-            bouton.onclick = function(e){
-                if(div.style.display=="none"){
-                    div.style.display="block";
-                }
-                else{
-                    div.style.display="none";
                 }
             };
         };
@@ -57,6 +45,14 @@
 
         #showdiv {
             display: none;
+        }
+
+        #showdiv2 {
+            display: none;
+        }
+
+        #error {
+            margin-top: 20px;
         }
 
     </style>
@@ -103,24 +99,21 @@
                         <div class="card-body">
                             <input type="hidden" name="liste" id="liste">
                             {% if app.user %}
-
-                                    <button type="button" id="test" class="btn btn-block btn-lg btn-panier text-white">Passer à la facturation</button>
-
+                                <button id="test" type="button" class="btn btn-block btn-lg btn-panier text-white">Passer à la facturation</button>
+                                <button type="button" class="btn btn-light btn-block btn-lg" ><a href="{{ path('app_affichage') }}">Continuer vos achats</a></button>
                             {% else %}
-                                <button type="button" id="notconnected" class="btn btn-block btn-lg btn-panier text-white">Passer à la facturation</button>
+                                <button id="test2" type="button" class="btn btn-block btn-lg btn-panier text-white">Passer à la facturation</button>
+                                <button type="button" class="btn btn-light btn-block btn-lg" ><a href="{{ path('app_affichage') }}">Continuer vos achats</a></button>
                             {% endif %}
-
-                            <button type="button" class="btn btn-light btn-block btn-lg" ><a href="{{ path('app_affichage') }}">Continuer vos achats</a></button>
+                            <div id="showdiv2">
+                                <p id="error" class="alert alert-danger">Vous devez vous connecter pour passer la commande. <a class="text-black" href="{{ path('app_login') }}">Se connecter</a></p>
+                            </div>
                         </div>
                     </div>
 
 
                         <div id="zone">
-
-
                         </div>
-
-
                             <td id="bas" colspan="3"></td>
                             <td><span id="total">0</span>€</td>
 
@@ -243,11 +236,9 @@
                             </div>
                         </div>
                     </div>
-<div id="notconnecteddiv">
-    vous devez vous connecter svp
-</div>
-
-                </div> </div> </div>
+                </div>
+            </div>
+        </div>
 
     </section>
 {% endblock %}
