@@ -50,29 +50,28 @@
         <ul class="navbar-nav">
             {% if app.user %}
             <li class="nav-item">
-                <a class="nav-link text-white" >{{ app.user.userIdentifier }}</a>
+                <a class="nav-link text-white" href="{{ path('app_profile') }}">bonjour, {{ app.user.userIdentifier }}</a>
             </li>
             {% endif %}
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{ path('app_recherche') }}"></a>
+                <a class="nav-link text-white" href="{{ path('app_recherche') }}">Recherche</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{ path('app_affichage') }}">Billeterie</a>
             </li>
-
-            {% if app.user %}
-                <li class="nav-item">
-                    <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_logout') }}">Logout</a></button>
-                </li>
-                {% else %}
-                    <li class="nav-item">
-                        <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_login') }}">LOG IN</a></button>
-                    </li>
-            {% endif %}
                 <li class="nav-item">
                     <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_panier') }}">MON PANIER  <span id="panier" class="badge badge-pill">0</span></a>
                     </button>
                 </li>
+            {% if app.user %}
+                <li class="nav-item">
+                    <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_logout') }}">Logout</a></button>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_login') }}">LOG IN</a></button>
+                </li>
+            {% endif %}
         </ul>
     </div>
 </nav>
