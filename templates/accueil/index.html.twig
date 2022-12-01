@@ -6,18 +6,18 @@
     <style>
         /* INDEX */
         .sectionun {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            height: 600px;
             background-image: url("{{ asset('assets/images/hero.jpg')}}");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
         }
         .sectiondeux {
-            height: 100vh;
+            height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -25,16 +25,20 @@
             color: white;
         }
         .sectiontroix {
+            height: 400px;
             display: flex;
             align-items: center;
+            justify-content: center;
             background-color: white;
             color: black;
+            margin: 0 auto;
         }
         .sectionun p {
             color: white;
-            font-size: 90px;
-            width: 60%;
+            font-size: 6rem;
             font-weight: bolder;
+            margin: 40px;
+            line-height: 6rem;
         }
 
         .billeterie {
@@ -56,44 +60,57 @@
             margin-bottom: 60px;
             text-align: left;
         }
-        .right img{
-            height: 760px;
+
+
+        .left-container {
+            width: 50%;
+            display: flex;
+            float: left;
         }
+
         .left {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            margin: 0 auto;
+            padding: 30px;
         }
+
+        .right {
+            height: 100%;
+            width: 50%;
+            display: flex;
+            float: right;
+            background-size: cover;
+        }
+
+        .right #tele {
+            width: 100%;
+            background-size: cover;
+        }
+
+        .center {
+            padding: 20px;
+        }
+
         .rechercher {
             text-decoration: none;
             color: white;
             background-color: black;
             padding: 12px 60px 12px 60px;
             border-radius: 25px;
+            margin-top: 20px;
         }
         .ville {
-            font-size: 50px;
+            font-size: 2rem;
         }
         .jamais {
             font-weight: bold;
         }
         .obtenez {
-            font-size: 20px;
             margin-bottom: 60px;
         }
-        .right img{
-            height: 760px;
-        }
 
-        .sectiontroix > .right {
-            row-gap: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            align-content: center;
-            width: 25%;
-            margin-left: 10%;
-        }
         .envie {
             font-size: 16px;
             font-weight: bold;
@@ -109,35 +126,41 @@
         .sectionun {
             background-image: url("{{ asset('assets/images/hero.jpg')}}");
         }
+
+        #cachemisere {
+            margin-bottom: 40px;
+        }
+
     </style>
 
-<div class="sectionun" >
-    <p>Tous vos billets, un seul site.</p>
-</div>
+    <div class="sectionun" >
+        <p id="title">Tous vos billets, <br> un seul site.</p>
+    </div>
+
     <div class="sectiondeux">
-        <div class="left">
-            <p class="ville">Votre ville comme <br>
-                vous ne l’avez  <span class="jamais">JAMAIS</span> vu</p>
-            <p class="obtenez">
-                Obtenez votre billet pour l’évènement de <br>
-                votre choix.
-            </p>
-            <a class="billeterie" href="{{ path('app_recherche') }}">BILLETERIE</a>
+        <div class="left-container">
+            <div class="left">
+                <p class="ville">Votre ville comme <br>
+                    vous ne l’avez  <span class="jamais">JAMAIS</span> vu</p>
+                <p class="obtenez">
+                    Obtenez votre billet pour l’évènement de <br>
+                    votre choix.
+                </p>
+                <a class="billeterie" href="{{ path('app_recherche') }}">BILLETERIE</a>
+            </div>
         </div>
         <div class="right">
-            <img src="{{ asset('assets/images/hand.png') }}" alt="hand with ticket">
+            <img id="tele" src="{{ asset('assets/images/work.jpg') }}" alt="man watching tv">
         </div>
     </div>
 
-<div class="sectiontroix">
-    <div class="left">
-        <img src="{{ asset('assets/images/work.jpg') }}" alt="man watching tv">
+    <div class="sectiontroix">
+        <div class="center">
+            <p class="envie">VOS ENVIES</p>
+            <p class="decouvrez">Découvrez ce qui vous fait <span>PLAISIR</span></p>
+            <p id="cachemisere" style="font-size: 18px; text-align: left;">Une pièce de théâtre ? Un film ? Un concert ? Laissez vous guider par notre
+                système de recherche.</p>
+            <a class="rechercher"href="{{ path('app_affichage') }}">RECHERCHER</a>
+        </div>
     </div>
-    <div class="right">
-        <p class="envie">VOS ENVIES</p>
-        <p class="decouvrez">Découvrez ce qui vous fait <span>plaisir</span></p>
-        <p style="font-size: 18px; text-align: left;">Une pièce de théâtre ? Un film ? Un concert ? Laissez vous guider par notre
-            système de recherche.</p>
-        <a class="rechercher"href="{{ path('app_affichage') }}">RECHERCHER</a>
-    </div></div>
 {% endblock %}
