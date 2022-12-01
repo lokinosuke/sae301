@@ -61,7 +61,7 @@
                     <p class="fw-bold" style="font-size: 50px;">Se connecter</p>
                     <p class="" style="color:#666666;font-size: 25px;">Accéder à votre compte</p>
                     </div>
-                    <form method="post">
+                    <form method="post" id="form-login">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                             <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control form-control-lg" autocomplete="email" required autofocus/>
@@ -70,8 +70,8 @@
 
                         <!-- Password input -->
                         <div class="form-outline mb-4">
-                            <input type="password" name="password" id="form1Example23" class="form-control form-control-lg" autocomplete="current-password" required />
-                            <label class="form-label" for="inputPassword">Mot de passe</label>
+                            <input for="verifpass" type="password" name="password" id="form1Example23" class="form-control form-control-lg" autocomplete="current-password" required />
+                            <label id="verifpass" class="form-label" for="inputPassword">Mot de passe</label>
                         </div>
 
 
