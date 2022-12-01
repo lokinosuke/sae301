@@ -5,9 +5,6 @@
 {% block body %}
 
 
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
 
     {% if app.user %}
         <div class="mb-3">
@@ -73,6 +70,10 @@
                             <input for="verifpass" type="password" name="password" id="form1Example23" class="form-control form-control-lg" autocomplete="current-password" required />
                             <label id="verifpass" class="form-label" for="inputPassword">Mot de passe</label>
                         </div>
+
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
 
 
                         <!-- Submit button -->
