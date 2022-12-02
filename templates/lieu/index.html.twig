@@ -1,0 +1,18 @@
+{% extends 'basevariant.html.twig' %}
+
+{% block title %}Hello LieuController!{% endblock %}
+
+{% block body %}
+    <div class="card-container">
+        {% for lieu in lieu %}
+                    <div>
+                        <h5 class="card-title text-start" id="article">{{ lieu.Endroit }}</h5>
+                        <p>{{ lieu.Adresse}}</p>
+                        <p>{{ lieu.capacite }}</p>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+
+    </div>
+{% endblock %}
