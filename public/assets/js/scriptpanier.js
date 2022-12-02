@@ -29,7 +29,6 @@ function clickplus(tag){
         panier++;
         document.getElementById('panier').innerHTML=panier;
         this.parentNode.querySelector('span').innerHTML=qte;
-
         prix=this.parentNode.parentNode.querySelector('.unitaire').innerHTML;
         total= prix*qte;
         this.parentNode.parentNode.querySelector('.prix').innerHTML=total;
@@ -42,6 +41,7 @@ function clickplus(tag){
         console.log(montab)
         totalgeneral += 1*prix
         document.querySelector('#total').innerHTML=totalgeneral
+        console.log(montab)
     })
 }
 
@@ -69,6 +69,7 @@ function clickmoins(tag){
         console.log(montab)
         totalgeneral -= 1*prix
         document.querySelector('#total').innerHTML=totalgeneral
+        console.log(montab)
     })
 
     function recupCookie(nom) {

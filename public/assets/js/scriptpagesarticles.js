@@ -7,13 +7,13 @@ document.getElementById('ajout').addEventListener('click',function() {
     console.log("ça clique!")
     var id = document.getElementById('id').value
     var article= document.getElementById('article').innerHTML
-    var prix= document.getElementById('prix').innerHTML
+    var prix = document.getElementById('prix').innerHTML
     console.log( id + " " +"quantite" + article + prix )
 
     index = montab.findIndex(element => element.id ==id); //trouver l'article dans la liste du panier
     if(index>-1){
         console.log("l'article est deja dans le panier, il faut juste incrementer la qte")
-        montab[index].quantite	= parseInt(montab[index].quantite) + parseInt(document.getElementById('qte').value)
+        montab[index].quantite = parseInt(montab[index].quantite) + parseInt(document.getElementById('qte').value)
         console.log(montab)
     }
     else        {
