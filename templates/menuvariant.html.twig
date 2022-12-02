@@ -25,6 +25,8 @@
 
     .navbar {
         padding: 20px 20px 20px 40px;
+        background: rgb(0,0,0);
+        background: linear-gradient(180deg, rgba(0,0,0,0.3292716744901085) 0%, rgba(255,255,255,0) 100%);
     }
 
     .btn-nav {
@@ -103,12 +105,12 @@
                     </button>
                     <div class="dropdown-content">
                         <a href="{{ path('app_profile') }}">Mon compte</a>
-                        <a class="nav-link text-white" href="{{ path('app_logout') }}">Se deconnecter</a>
+                        <a class="nav-link text-white" href="{{ path('app_logout') }}">Se déconnecter</a>
                     </div>
                 </div>
             {% else %}
                 <li class="nav-item">
-                    <button class="btn btn-nav" type="button"><a class="nav-link text-black" href="{{ path('app_login') }}">LOG IN</a></button>
+                    <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_login') }}">LOG IN</a></button>
                 </li>
             {% endif %}
 
