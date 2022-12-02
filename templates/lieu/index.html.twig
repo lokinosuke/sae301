@@ -1,18 +1,236 @@
 {% extends 'basevariant.html.twig' %}
 
-{% block title %}Hello LieuController!{% endblock %}
+{% block title %}Les salles{% endblock %}
 
 {% block body %}
-    <div class="card-container">
-        {% for lieu in lieu %}
-                    <div>
-                        <h5 class="card-title text-start" id="article">{{ lieu.Endroit }}</h5>
-                        <p>{{ lieu.Adresse}}</p>
-                        <p>{{ lieu.capacite }}</p>
+
+    <style>
+
+        html,body {
+            overflow-x: hidden;
+            caret-color: transparent;
+            background-color: #eee;
+        }
+
+        .section-card {
+            display: flex;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .card-container {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            width: 70%;
+            margin-top: 60px;
+        }
+
+        .card-img {
+            object-fit: cover;
+            filter: brightness(0.5);
+        }
+
+        .card-title {
+            padding-left: 20px;
+            font-weight: bold;
+        }
+
+        .card {
+            display: flex;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+
+        .card-text1 {
+            padding-left: 20px;
+            color: gray;
+            font-weight: bold;
+        }
+
+        .text-container {
+            margin-left: 20px;
+            background-color: black;
+            border-radius: 15px;
+            width: 140px;
+        }
+
+        .text-container2 {
+            margin-left: 20px;
+            background-color: #3EB57C;
+            border-radius: 15px;
+            width: 100px;
+            position: absolute;
+            top: 25px;
+            height: 30px;
+        }
+
+        .text-container3 {
+            margin-left: 20px;
+            background-color: #3E8AB5;
+            border-radius: 15px;
+            width: 100px;
+            position: absolute;
+            top: 25px;
+            height: 30px;
+        }
+
+        .text-container4 {
+            margin-left: 20px;
+            background-color: #B53E3E;
+            border-radius: 15px;
+            width: 100px;
+            position: absolute;
+            top: 25px;
+            height: 30px;
+        }
+
+        .text-container5 {
+            margin-left: 20px;
+            background-color: #784F86;
+            border-radius: 15px;
+            width: 100px;
+            position: absolute;
+            top: 25px;
+            height: 30px;
+        }
+
+
+
+
+        .card-text2 {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding: 3px;
+
+        }
+
+        .card-text4 {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding: 3px;
+
+        }
+
+        .card-text3 {
+            padding-left: 20px;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            color: black;
+        }
+
+        #details {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .btn {
+            background-color: black;
+        }
+
+        .card-title1 {
+            margin: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .card1 {
+            margin: 50px 100px 50px 100px;
+        }
+
+
+        .btn {
+            display: flex;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        #cercle {
+            position: absolute;
+            width: 2000px;
+            height: 2000px;
+            border-radius: 1000px;
+            left: 250px;
+            bottom: 1px;
+            background: #B98FCF;
+        }
+
+        #titre-page {
+            text-align: center;
+            background-color: black;
+            padding: 10px;
+            color: white;
+            width: 250px;
+            margin: 0 auto;
+            border-radius: 20px;
+            margin-top: 50px;
+            font-family: Arial;
+            font-weight: bold;
+        }
+
+        /* #cercle2 {
+        position: relative;
+        width: 2000px;
+        height: 2000px;
+        border-radius: 1000px;
+        right: 800px;
+        top: 300px;
+        background: #5079BE;
+    } */
+
+        @media (max-width: 640px) {
+
+            html,body {
+                overflow-x: hidden;
+            }
+
+            .card {
+                display: flex;
+                margin: 0 auto;
+                margin-top: 20px;
+                width: 25rem;
+            }
+
+            .card-container {
+                display: flex;
+                margin: 0 auto;
+                flex-wrap: wrap;
+                margin-bottom: 50px;
+            }
+
+            .panier-achat {
+                margin-top: 30px;
+            }
+        }
+    </style>
+
+    <h1 id="titre-page">Les salles</h1>
+
+<div class="card-container">
+    {% for lieu in lieu %}
+            <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
+                <img src="https://resize-lejdd.lanmedia.fr/var/jdd/public/media/image/2022/07/22/00/le-patron-du-bataclan-la-salle-a-ete-refaite-a-l-identique.jpg?VersionId=w27h32AUhlNBcatIz0pqf9O6ImmQJLXn" class="card-img-top card-img" alt="concert makala" height="200rem">
+                <div class="card-body">
+                    <h5 class="card-title text-start" id="article">{{ lieu.Endroit }}</h5>
+                    <p class="card-text1 fs-6 text-start">{{ lieu.Adresse }}</p>
+                    <div class="text-container">
+                        <p class="card-text2 fs-6">{{ lieu.capacite }} places</p>
                     </div>
                 </div>
-            </a>
-        {% endfor %}
+            </div>
+        </a>
 
-    </div>
+    {% endfor %}
+</div>
+
+</div>
 {% endblock %}
