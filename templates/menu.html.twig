@@ -36,42 +36,10 @@
     .btn:hover {
         background-color: black;
     }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
+    li a:active {
+        text-decoration: underline;
     }
 
-    .dropdown-content a {
-        float: none;
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-    }
-
-    .dropdown-content a:hover {
-        background-color: #ddd;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropbtn {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-.dropdown {
-    margin: auto;
-    margin-right: 20px;
-    border-radius: 25px;
-}
 
 </style>
 
@@ -83,6 +51,11 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
+            {% if app.user %}
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{ path('app_profile') }}">bonjour, {{ app.user.userIdentifier }}</a>
+            </li>
+            {% endif %}
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{ path('app_recherche') }}">Recherche</a>
             </li>
@@ -109,10 +82,8 @@
                         </div>
                     </div>
             {% else %}
-
                 <li class="nav-item">
-
-                    <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_login') }}">Se connecter</a></button>
+                    <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_login') }}">LOG IN</a></button>
                 </li>
             {% endif %}
         </ul>
