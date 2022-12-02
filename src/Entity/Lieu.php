@@ -24,6 +24,9 @@ class Lieu
     #[ORM\Column(length: 255)]
     private ?string $adresse = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
+
     #[ORM\OneToMany(mappedBy: 'derouler', targetEntity: Manif::class)]
     private Collection $manifs;
 
@@ -72,7 +75,17 @@ class Lieu
 
         return $this;
     }
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
 
+    public function setImage(string $image): self
+    {
+        $this->adresse = $image;
+
+        return $this;
+    }
     /**
      * @return Collection<int, Manif>
      */

@@ -215,7 +215,7 @@
 <div class="card-container">
     {% for lieu in lieu %}
             <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
-                <img src="https://resize-lejdd.lanmedia.fr/var/jdd/public/media/image/2022/07/22/00/le-patron-du-bataclan-la-salle-a-ete-refaite-a-l-identique.jpg?VersionId=w27h32AUhlNBcatIz0pqf9O6ImmQJLXn" class="card-img-top card-img" alt="concert makala" height="200rem">
+                <img src="{{ asset("assets/images/#{ lieu.image }") }}" class="card-img-top card-img" alt="concert makala" height="200rem">
                 <div class="card-body">
                     <h5 class="card-title text-start" id="article">{{ lieu.Endroit }}</h5>
                     <p class="card-text1 fs-6 text-start">{{ lieu.Adresse }}</p>
