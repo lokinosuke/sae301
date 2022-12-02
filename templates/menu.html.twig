@@ -96,9 +96,10 @@
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{ path('app_affichage') }}">Billeterie</a>
             </li>
-                <li class="nav-item">
-                    </button>
-                </li>
+            <li class="nav-item">
+                <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_panier') }}">MON PANIER  <span id="panier" class="badge badge-pill">0</span></a>
+                </button>
+            </li>
                 {% if app.user %}
                     <div class="dropdown">
                         <button class="dropbtn"><a class="nav-link text-white">{{ app.user.userIdentifier }}</a>
