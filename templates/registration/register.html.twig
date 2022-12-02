@@ -1,17 +1,102 @@
-{% extends 'base.html.twig' %}
+{% extends 'baselogin.html.twig' %}
 
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+    <style>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+        html {
+            overflow-x: hidden;
+        }
+
+        .login {
+            background: rgb(1,82,151);
+            background: linear-gradient(135deg, rgba(1,82,151,1) 0%, rgba(254,163,207,1) 100%);
+
+        }
+
+        .mdp {
+            margin-bottom: 20px;
+        }
+
+        .fw-bold {
+            text-align: center;
+        }
+
+        .right-container {
+            background-color: white;
+            padding: 100px;
+            border-radius: 50px 0px 0px 50px;
+        }
+
+        .title {
+            margin: 100px 0px 100px 0px;
+            text-align: center;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        #btn-creer {
+            margin-top: 20px;
+        }
+
+        @media only screen and (min-width: 768px){
+            .colmd7 {
+                flex: 0 0 auto;
+            }}
+        @media only screen and (max-width: 768px){
+            .colmd7 {
+                flex: 0 0 auto;
+                width: 100%;
+            }}
+    </style>
+
+    <section class="login">
+        <div class="container-login">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-md-8 col-lg-7 col-xl-6 text-container">
+                    <p class="img-fluid title fw-bold" style="font-size: 4rem; color: #FFFFFF">
+                        Vos billets,
+                        <br> Partout,
+                        <br>
+                        <span style="color: black">Tout le temps. </span></p>
+                </div>
+
+                <div class="colmd7 col-lg-5 col-xl-5 offset-xl-1 right-container" style="z-index: 1;">
+                    <div class="d-flex justify-content-around align-items-center mb-4" style="flex-direction: column;">
+                        <p class="fw-bold" style="font-size: 50px;">Créer votre compte</p>
+                        <p class="" style="color:#666666;font-size: 25px;">Nouveau compte</p>
+                    </div>
+
+                    {{ form_start(registrationForm) }}
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            {{ form_row(registrationForm.email,{'name':'Adresse mail'}) }}
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                            {{ form_row(registrationForm.plainPassword,{'name':'Mot de passe'}) }}
+                        </div>
+
+                        <!-- Submit button -->
+                        {{ form_row(registrationForm.agreeTerms,{'name':'Accepter les termes'}) }}
+                        <button id="btn-creer" type="submit" class="btn btn-primary btn-lg btn-block" style="background-color: #1B202C;border: black;width: 100%;">Créer le compte</button>
+
+                        <div class="d-flex justify-content-around align-items-center mb-4">
+                            <p class="text-center mx-3 mb-0 text-muted" style="margin-top: 20px;color:#666666;">Vous avez déjà un compte ?</p>
+                        </div>
+
+                        <a class="btn btn-primary btn-lg btn-block" style="background-color: #1B202C;border: black;width: 100%;" href="{{ path('app_login') }}"  role="button">Se connecter</a>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+
+    </section>
 {% endblock %}
+
+
