@@ -160,6 +160,15 @@
             font-weight: bold;
         }
 
+        #p-description {
+            width: 80%;
+        }
+
+        .btn:hover {
+            background-color: #eee;
+            color: black;
+        }
+
 
 
     </style>
@@ -198,10 +207,11 @@
                     </div>
                 </div>
                 <div>
-                    <p>{{ manif.description}} </p>
+                    <p id="p-description">{{ manif.description}} </p>
                 </div>
-                <p id="prix">{{ manif.prix }}</p>
+                <p id="prix">{{ manif.prix }}€</p>
                 <div class="buttonbas">
+                    <button type="button" class="btn btn-light btn-block btn-lg" ><a style="text-decoration: none; color: black" href="{{ path('app_affichage') }}">Continuer vos achats</a></button>
                     <div class="link-container">
 
                         {% if manif.genre == 'Théâtre' %}
@@ -230,7 +240,6 @@
                             </div>
                         {% endif %}
                     </div>
-                    <a class="continuerachat" href="{{ path("app_affichage")}}" style="text-align: center; text-decoration: none;"><p style=" margin: 0px;text-decoration: none;color: black;">Continuer mes achats</p></a>
 
                 </div>
             </div>
