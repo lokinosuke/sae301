@@ -24,6 +24,10 @@
 
         }
 
+        .mdp {
+            margin-bottom: 20px;
+        }
+
         .right-container {
             background-color: white;
             padding: 100px;
@@ -72,7 +76,8 @@
                         </div>
 
                         {% if error %}
-                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            <div class="alert alert-danger">Informations incorrectes. <br>
+                                <a href="https://youtu.be/xvFZjo5PgG0" autostart="true">Mot de passe oublié ?</a> </div>
                         {% endif %}
 
 
