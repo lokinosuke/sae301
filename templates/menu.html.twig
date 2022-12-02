@@ -8,7 +8,6 @@
         margin: auto;
         margin-right: 20px;
     }
-
     .nav-link {
         font-family: Arial;
         font-weight: bold;
@@ -36,10 +35,46 @@
     .btn:hover {
         background-color: black;
     }
+    .dropbtn {
+        display: flex;
+        align-items: center;
+    }
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
 
-   li a:active {
-       text-decoration: underline;
-   }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    li a:active {
+        text-decoration: underline;
+    }
 
 
 </style>
@@ -52,11 +87,6 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-            {% if app.user %}
-            <li class="nav-item">
-                <a class="nav-link text-white" href="{{ path('app_profile') }}">bonjour, {{ app.user.userIdentifier }}</a>
-            </li>
-            {% endif %}
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{ path('app_recherche') }}">Recherche</a>
             </li>
@@ -66,14 +96,20 @@
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{ path('app_affichage') }}">Billeterie</a>
             </li>
-                <li class="nav-item">
-                    <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_panier') }}">MON PANIER  <span id="panier" class="badge badge-pill">0</span></a>
-                    </button>
-                </li>
-            {% if app.user %}
-                <li class="nav-item">
-                    <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_logout') }}">Logout</a></button>
-                </li>
+            <li class="nav-item">
+                <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_panier') }}">MON PANIER  <span id="panier" class="badge badge-pill">0</span></a>
+                </button>
+            </li>
+                {% if app.user %}
+                    <div class="dropdown">
+                        <button class="dropbtn"><a class="nav-link text-white">{{ app.user.userIdentifier }}</a>
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="{{ path('app_profile') }}">Mon compte</a>
+                            <a class="nav-link text-white" href="{{ path('app_logout') }}">Se deconnecter</a>
+                        </div>
+                    </div>
             {% else %}
                 <li class="nav-item">
                     <button class="btn btn-nav" type="button"><a class="nav-link text-white" href="{{ path('app_login') }}">LOG IN</a></button>
