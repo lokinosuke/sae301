@@ -7,13 +7,20 @@ document.getElementById('liste').value=JSON.stringify(montab); // sauver montab 
 var totalgeneral=0
 montab.forEach(uneinfo => {
 
-    html = `
-    <div id="${uneinfo.id}">
-    <div>${uneinfo.article}</div>
-    <div><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></div>
-    <div><span class="unitaire">${uneinfo.prix}</span></div>
-    <div><span class="prix">${uneinfo.prix}*${uneinfo.quantite}</span></div>
-    </div>`;
+    html =`
+
+<div class="card rounded-3 mb-4">
+<div div class="card-body p-4">
+<div id="${uneinfo.id}" class="row d-flex justify-content-between align-items-center">
+<div class="col-md-2 col-lg-2 col-xl-2"> <img src="https://www.stereolux.org/sites/default/files/styles/auto_1920/public/ged/carremakala_0.jpg?itok=x1OG7Xq1" class="img-fluid rounded-3" alt="Concert"></div>
+<div class="col-md-3 col-lg-3 col-xl-3"><p class="lead fw-normal mb-2">${uneinfo.article}</p><span class="text-muted">prix unitaire: </span><span class="unitaire">${uneinfo.prix}</span>€</div>
+<div class="col-md-3 col-lg-3 col-xl-2 d-flex" style="gap: 7%;"><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></div>
+<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1"><span class="mb-0 prix">${uneinfo.prix}*${uneinfo.quantite}</span>€</div>
+<div class="col-md-1 col-lg-1 col-xl-1 text-end"><a href="#!" class="text-danger"><box-icon name='trash-alt' type='solid' color='#f56c6c' ></box-icon></a></div>
+</div>
+</div>
+</div>
+`;
 
     document.getElementById('zone').innerHTML += html
     totalgeneral += uneinfo.prix * uneinfo.quantite
