@@ -37,19 +37,28 @@
     .btn-nav:hover {
         background-color: black;
     }
- .dropbtn {
-     display: flex;
-     align-items: center;
- }
+    .dropbtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .dropdown {
+        align-items: center;
+        padding: 5px;
+        margin-right: 20px;
+        justify-content: flex-end;
+    }
     .dropdown .dropbtn {
         font-size: 16px;
-        border: none;
         outline: none;
         color: white;
-        padding: 14px 16px;
-        background-color: inherit;
+        padding: 4px 12px;
+        background-color: black;
         font-family: inherit;
         margin: 0;
+        border-radius: 25px;
+        width: 180px;
     }
 
     .dropdown-content {
@@ -72,6 +81,9 @@
 
     .dropdown:hover .dropdown-content {
         display: block;
+    }
+    li a:active {
+        text-decoration: underline;
     }
 
 
@@ -100,7 +112,7 @@
             </li>
             {% if app.user %}
                 <div class="dropdown">
-                    <button class="dropbtn"><a class="nav-link text-black">{{ app.user.userIdentifier }}</a>
+                    <button class="dropbtn"><a class="nav-link text-white">{{ app.user.userIdentifier }}</a>
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
