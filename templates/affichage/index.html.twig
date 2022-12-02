@@ -9,6 +9,7 @@
         html,body {
             overflow-x: hidden;
             caret-color: transparent;
+            background-color: #eee;
         }
 
         .section-card {
@@ -27,6 +28,7 @@
 
         .card-img {
             object-fit: cover;
+            filter: brightness(0.5);
         }
 
         .card-title {
@@ -58,6 +60,9 @@
             background-color: #3EB57C;
             border-radius: 15px;
             width: 100px;
+            position: absolute;
+            top: 25px;
+            height: 30px;
         }
 
         .text-container3 {
@@ -65,6 +70,9 @@
             background-color: #3E8AB5;
             border-radius: 15px;
             width: 100px;
+            position: absolute;
+            top: 25px;
+            height: 30px;
         }
 
         .text-container4 {
@@ -72,6 +80,9 @@
             background-color: #B53E3E;
             border-radius: 15px;
             width: 100px;
+            position: absolute;
+            top: 25px;
+            height: 30px;
         }
 
         .text-container5 {
@@ -79,6 +90,9 @@
             background-color: #784F86;
             border-radius: 15px;
             width: 100px;
+            position: absolute;
+            top: 25px;
+            height: 30px;
         }
 
 
@@ -193,6 +207,23 @@
     <a id="article-lien" href="{{ path("app_affichagedetail",{id:manif.id}) }}">
         <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
             <img src="{{ asset("assets/images/#{ manif.affiche }") }}" class="card-img-top card-img" alt="concert makala" height="200rem">
+            {% if manif.genre == 'Théâtre' %}
+                <div class="text-container5">
+                    <p class="card-text4 fs-6">{{ manif.genre }}</p>
+                </div>
+            {% elseif manif.genre == 'Cinéma' %}
+                <div class="text-container4">
+                    <p class="card-text4 fs-6">{{ manif.genre }}</p>
+                </div>
+            {% elseif manif.genre == 'Concert' %}
+                <div class="text-container2">
+                    <p class="card-text4 fs-6">{{ manif.genre }}</p>
+                </div>
+            {% elseif manif.genre == 'Exposition' %}
+                <div class="text-container3">
+                    <p class="card-text4 fs-6">{{ manif.genre }}</p>
+                </div>
+            {% endif %}
             <div class="card-body" href="{{ path("app_affichagedetail",{id:manif.id}) }}">
                 <h5 class="card-title text-start" id="article">{{ manif.titre}} - {{ manif.derouler.endroit }}</h5>
                 <p class="card-text1 fs-6 text-start">{{ manif.date |date("d/m/Y H:i")}}</p>
@@ -204,24 +235,6 @@
                 <div class="text-container">
                     <a href="{{ path("app_affichagedetail",{id:manif.id}) }}"><p class="card-text2 fs-6">Voir les details</p></a>
                 </div>
-
-                {% if manif.genre == 'Théâtre' %}
-                    <div class="text-container5">
-                        <p class="card-text4 fs-6">{{ manif.genre }}</p>
-                    </div>
-                {% elseif manif.genre == 'Cinéma' %}
-                    <div class="text-container4">
-                        <p class="card-text4 fs-6">{{ manif.genre }}</p>
-                    </div>
-                {% elseif manif.genre == 'Concert' %}
-                    <div class="text-container2">
-                        <p class="card-text4 fs-6">{{ manif.genre }}</p>
-                    </div>
-                {% elseif manif.genre == 'Exposition' %}
-                    <div class="text-container3">
-                        <p class="card-text4 fs-6">{{ manif.genre }}</p>
-                    </div>
-                {% endif %}
             </div>
         </div>
     </a>
