@@ -41,6 +41,7 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
+        border: none;
     }
 
     .dropdown {
@@ -53,7 +54,7 @@
         font-size: 16px;
         outline: none;
         color: white;
-        padding: 4px 12px;
+        padding: 7px;
         background-color: black;
         font-family: inherit;
         margin: 0;
@@ -68,6 +69,7 @@
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
+        margin-top: 5px;
     }
 
     .dropdown-content a {
@@ -76,23 +78,29 @@
         padding: 12px 16px;
         text-decoration: none;
         display: block;
-        text-align: left;
+        text-align: center;
     }
 
     .dropdown:hover .dropdown-content {
         display: block;
     }
 
-    li a:active {
-        text-decoration: underline;
+   .btn-nav:active {
+       background-color: black;
+       color: white;
     }
+
+    #logo {
+        width: 130px;
+    }
+
 
 
 </style>
 
 
 <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand text-white" href="{{ path('app_accueil') }}">Marché de Rungis</a>
+    <a class="navbar-brand text-white" href="{{ path('app_accueil') }}"><img id="logo" src="{{ asset('assets/images/logo_white.png') }}" alt="Logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -118,7 +126,7 @@
                         </button>
                         <div class="dropdown-content">
                             <a href="{{ path('app_profile') }}">Mon compte</a>
-                            <a class="nav-link text-white" href="{{ path('app_logout') }}">Se deconnecter</a>
+                            <a class="nav-link text-bg-danger" href="{{ path('app_logout') }}">Se déconnecter</a>
                         </div>
                     </div>
             {% else %}
