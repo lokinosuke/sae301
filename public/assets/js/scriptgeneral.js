@@ -3,8 +3,9 @@ if (liste!=="")montab = JSON.parse(liste)
 else montab =Array()
 console.log(montab)
 
-var panier = 0
-montab.forEach(element => {   panier += parseInt(element.quantite) })
+var panier =0
+montab.forEach(element => {   panier+= element.quantite })
+
 document.getElementById('panier').innerHTML=panier
 console.log(montab)
 
@@ -20,12 +21,3 @@ function recupCookie(nom){
     })
     return sortie
 }
-
-$("#new_edit_utilisateur").on('submit', function(){
-    if($("#utilisateur_password").val() != $("#verifpass").val()) {
-        //implémntez votre code
-        alert("Les deux mots de passe saisies sont différents");
-        alert("Merci de renouveler l'opération");
-        return false;
-    }
-})

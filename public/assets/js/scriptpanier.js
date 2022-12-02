@@ -13,9 +13,7 @@ montab.forEach(uneinfo => {
     <div><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></div>
     <div><span class="unitaire">${uneinfo.prix}</span></div>
     <div><span class="prix">${uneinfo.prix}*${uneinfo.quantite}</span></div>
-    </div>
-
-`;
+    </div>`;
 
     document.getElementById('zone').innerHTML += html
     totalgeneral += uneinfo.prix * uneinfo.quantite
@@ -28,7 +26,10 @@ function clickplus(tag){
     tag.addEventListener('click',function() {
         qte=this.parentNode.querySelector('span').innerHTML;
         qte++;
+        panier++;
+        document.getElementById('panier').innerHTML=panier;
         this.parentNode.querySelector('span').innerHTML=qte;
+
         prix=this.parentNode.parentNode.querySelector('.unitaire').innerHTML;
         total= prix*qte;
         this.parentNode.parentNode.querySelector('.prix').innerHTML=total;
@@ -56,6 +57,8 @@ function clickmoins(tag){
         this.parentNode.parentNode.querySelector('.prix').innerHTML=total;
 
         if (qte<0){qte--};
+        panier--;
+        document.getElementById('panier').innerHTML=panier;
 
 
         id = this.parentNode.parentNode.id;
