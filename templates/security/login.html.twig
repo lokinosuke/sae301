@@ -39,6 +39,10 @@
             text-align: center;
         }
 
+        #mdp {
+            margin-bottom: 20px;
+        }
+
         @media only screen and (min-width: 768px){
             .colmd7 {
                 flex: 0 0 auto;
@@ -77,7 +81,9 @@
 
                         </div>
 
-                        <div><a href="https://youtu.be/xvFZjo5PgG0" autostart="true">Mot de passe oublié ?</a></div>
+                        <div id="mdp">
+                            <a href="https://rickrolled.fr/">Mot de passe oublié ?</a>
+                        </div>
 
                         {% if error %}
                             <div class="alert alert-danger">Informations incorrectes. <br>

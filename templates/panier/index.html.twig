@@ -131,18 +131,19 @@
                                 <div class="row">
                                     <div class="col-md-8 order-md-1">
                                         <h4 class="mb-3" style="margin-bottom: 10px">Adresse de facturation</h4>
-                                        <form class="needs-validation" novalidate>
+
+                                        <form action="{{ path('app_finalisation') }}" method="post">
                                             <div class="row">
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="prenom">Nom</label>
-                                                    <input type="text" class="form-control" id="prenom" placeholder="Jean" value="" required>
+                                                    <label for="prenom">Prénom</label>
+                                                    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Jean" value="" required>
                                                     <div class="invalid-feedback">
                                                         Veuillez indiquer un prénom.
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="nom">Nom</label>
-                                                    <input type="text" class="form-control" id="nom" placeholder="Dupont" value="" required>
+                                                    <input type="text" name="nom" class="form-control" id="nom" placeholder="Dupont" value="" required>
                                                     <div class="invalid-feedback">
                                                         Veuillez indiquer un nom.
                                                     </div>
@@ -150,8 +151,8 @@
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="email">Email <span class="text-muted">(Vous recevrez votre ticket par mail.)</span></label>
-                                                <input type="email" class="form-control" id="email" placeholder="jeandupont@exemple.com">
+                                                <label for="email">Email <span class="text-sucess">(Vous recevrez votre ticket par mail.)</span></label>
+                                                <input type="email" name="mail" class="form-control" id="email" placeholder="jeandupont@exemple.com">
                                                 <div class="invalid-feedback">
                                                     Veuillez indiquer une adresse mail valide.
                                                 </div>
@@ -159,7 +160,7 @@
 
                                             <div class="mb-3">
                                                 <label for="adresse">Adresse</label>
-                                                <input type="text" class="form-control" id="adresse" placeholder="9 rue du Quebec" required>
+                                                <input type="text" name="adresse" class="form-control" id="adresse" placeholder="9 rue du Quebec" required>
                                                 <div class="invalid-feedback">
                                                     Veuillez indiquer une adresse.
                                                 </div>
@@ -167,13 +168,13 @@
 
                                             <div class="mb-3">
                                                 <label for="adressedeux">Adresse 2 <span class="text-muted">(Optionnel)</span></label>
-                                                <input type="text" class="form-control" id="adressedeux" placeholder="N° Appartement">
+                                                <input type="text" name="adressedeux" class="form-control" id="adressedeux" placeholder="N° Appartement">
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-md-3 mb-3">
                                                     <label for="codepostal">Code postal</label>
-                                                    <input type="text" class="form-control" id="codepostal" placeholder="10000" required>
+                                                    <input type="text" name="codepostal" class="form-control" id="codepostal" placeholder="10000" required>
                                                     <div class="invalid-feedback">
                                                         Veuillez indiquer un code postal.
                                                     </div>
@@ -184,12 +185,10 @@
                                                 <input type="checkbox" class="custom-control-input" id="newslatter">
                                                 <label class="custom-control-label" for="save-info">J'accepte de recevoir des offres et des réductions par mail.</label>
                                             </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
 
                         <div class="card adresse-card">
                             <div class="card-body">
@@ -197,7 +196,7 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="cc-name">Nom</label>
-                                        <input type="text" class="form-control" id="cc-name" placeholder="Jean Dupont" required>
+                                        <input type="text" name="cartenom" class="form-control" id="cc-name" placeholder="Jean Dupont" required>
                                         <small class="text-muted">Nom complet figurant sur la carte</small>
                                         <div class="invalid-feedback">
                                             Le nom est requis.
@@ -205,7 +204,7 @@
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="cc-number">Numéro de carte</label>
-                                        <input type="text" class="form-control" id="cc-number" placeholder="6354 XXXX XXXX XXXX" required>
+                                        <input type="text" name="numero" class="form-control" id="cc-number" placeholder="6354 XXXX XXXX XXXX" required>
                                         <div class="invalid-feedback">
                                             Le numéro de carte est requis.
                                         </div>
@@ -214,20 +213,19 @@
                                 <div class="row">
                                     <div class="col-md-3 mb-3">
                                         <label for="cc-expiration">Expiration</label>
-                                        <input type="text" class="form-control" id="cc-expiration" placeholder="09/25" required>
+                                        <input type="text" name="expiration" class="form-control" id="cc-expiration" placeholder="09/25" required>
                                         <div class="invalid-feedback">
                                             La date d'expiration est requise.
                                         </div>
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label for="cc-expiration">CVV</label>
-                                        <input type="text" class="form-control" id="cc-cvv" placeholder="876" required>
+                                        <input type="text" name="code" class="form-control" id="cc-cvv" placeholder="876" required>
                                         <div class="invalid-feedback">
                                             Le code de sécurité est requis.
                                         </div>
                                     </div>
                                 </div>
-                                <form action="{{ path('app_finalisation') }}" method="post">
                                     <input type="hidden" name="liste" id="liste">
                                     <button style="margin-top:20px" class="btn btn-lg btn-block btn-panier text-white" type="submit">Valider ma commande</button>
                                 </form>
