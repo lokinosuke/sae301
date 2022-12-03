@@ -15,7 +15,7 @@ montab.forEach(uneinfo => {
 <div class="col-md-2 col-lg-2 col-xl-2"> <img class="img-fluid rounded-3" src="${uneinfo.image}" alt=""></div>
 <div class="col-md-3 col-lg-3 col-xl-3"><p class="lead fw-normal mb-2">${uneinfo.article}</p><span class="text-muted">prix unitaire: </span><span class="unitaire">${uneinfo.prix}</span>€</div>
 <div class="col-md-3 col-lg-3 col-xl-2 d-flex" style="gap: 7%;"><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></div>
-<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1"><span class="mb-0 prix">${uneinfo.prix}*${uneinfo.quantite}</span>€</div>
+<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1"><span class="mb-0 prix">${(uneinfo.prix * uneinfo.quantite)}</span>€</div>
 <div class="col-md-1 col-lg-1 col-xl-1 text-end"><a href="#!" class="text-danger"><box-icon name='trash-alt' type='solid' color='#f56c6c' ></box-icon></a></div>
 </div>
 </div>
@@ -25,7 +25,7 @@ montab.forEach(uneinfo => {
     document.getElementById('zone').innerHTML += html
     totalgeneral += uneinfo.prix * uneinfo.quantite
 })
-document.getElementById('total').innerHTML = totalgeneral
+document.getElementById('total').innerHTML = totalgeneral.toFixed()
 
 
 document.querySelectorAll('.plus').forEach(clickplus)
@@ -36,9 +36,9 @@ function clickplus(tag){
         panier++;
         document.getElementById('panier').innerHTML=panier;
         this.parentNode.querySelector('span').innerHTML=qte;
-        prix=this.parentNode.parentNode.querySelector('.unitaire').innerHTML;
+        prix=parseFloat(this.parentNode.parentNode.querySelector('.unitaire').innerHTML);
         total= prix*qte;
-        this.parentNode.parentNode.querySelector('.prix').innerHTML=total;
+        this.parentNode.parentNode.querySelector('.prix').innerHTML=total.toFixed();
 
         id = this.parentNode.parentNode.id;
         index = montab.findIndex(element => element.id ==id);
@@ -46,8 +46,8 @@ function clickplus(tag){
         document.cookie = "panier="+JSON.stringify(montab)+"; path=/";
         document.getElementById('liste').value=JSON.stringify(montab);
         console.log(montab)
-        totalgeneral += 1*prix
-        document.querySelector('#total').innerHTML=totalgeneral
+        totalgeneral += parseFloat(prix)
+        document.querySelector('#total').innerHTML=totalgeneral.toFixed()
         console.log(montab)
     })
 }
@@ -56,12 +56,12 @@ function clickplus(tag){
 document.querySelectorAll('.moins').forEach(clickmoins)
 function clickmoins(tag){
     tag.addEventListener('click',function() {
-        qte=this.parentNode.querySelector('span').innerHTML;
+        qte=parseInt(this.parentNode.querySelector('span').innerHTML);
         if (qte>0){qte--};
         this.parentNode.querySelector('span').innerHTML=qte;
-        prix=this.parentNode.parentNode.querySelector('.unitaire').innerHTML;
+        prix=parseFloat(this.parentNode.parentNode.querySelector('.unitaire').innerHTML);
         total= prix*qte;
-        this.parentNode.parentNode.querySelector('.prix').innerHTML=total;
+        this.parentNode.parentNode.querySelector('.prix').innerHTML=total.toFixed();
 
         if (qte<0){qte--};
         panier--;
@@ -74,8 +74,8 @@ function clickmoins(tag){
         document.cookie = "panier="+JSON.stringify(montab)+"; path=/";
         document.getElementById('liste').value=JSON.stringify(montab);
         console.log(montab)
-        totalgeneral -= 1*prix
-        document.querySelector('#total').innerHTML=totalgeneral
+        totalgeneral -= parseFloat(prix)
+        document.querySelector('#total').innerHTML=totalgeneral.toFixed()
         console.log(montab)
     })
 
@@ -91,5 +91,10 @@ function clickmoins(tag){
         })
         return sortie
     }
+    function viderPanier() {
+        document.cookie="panier=;expires=Thu, 01 Jan 1970;path=/;";
+    }
 }
+
+
 
