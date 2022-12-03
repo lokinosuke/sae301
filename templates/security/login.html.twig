@@ -65,17 +65,19 @@
                     <form method="post" id="form-login">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control form-control-lg" autocomplete="email" required autofocus/>
                             <label class="form-label" for="form1Example13">Adresse email</label>
+                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control form-control-lg" autocomplete="email" required autofocus/>
+
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-4">
-                            <input for="verifpass" type="password" name="password" id="form1Example23" class="form-control form-control-lg" autocomplete="current-password" required />
                             <label id="verifpass" class="form-label" for="inputPassword">Mot de passe</label>
+                            <input for="verifpass" type="password" name="password" id="form1Example23" class="form-control form-control-lg" autocomplete="current-password" required />
+
                         </div>
 
-                        <a href="https://youtu.be/xvFZjo5PgG0" autostart="true">Mot de passe oublié ?</a>
+                        <div><a href="https://youtu.be/xvFZjo5PgG0" autostart="true">Mot de passe oublié ?</a></div>
 
                         {% if error %}
                             <div class="alert alert-danger">Informations incorrectes. <br>
