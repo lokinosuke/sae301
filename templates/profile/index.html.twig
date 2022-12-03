@@ -1,20 +1,78 @@
 {% extends 'basevariant.html.twig' %}
 
-{% block title %}Hello ProfileController!{% endblock %}
+{% block title %}Mon compte{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/sae301/src/Controller/ProfileController.php'|file_link(0) }}">src/Controller/ProfileController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/sae301/templates/profile/index.html.twig'|file_link(0) }}">templates/profile/index.html.twig</a></code></li>
-    </ul>
-</div>
+        .gradient-custom-2 {
+            /* fallback for old browsers */
+            background: #fbc2eb;
+
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
+        }
+
+        .p-4 {
+            margin-top: 30px;
+        }
+
+        #achats {
+            margin-bottom: 20px;
+        }
+
+    </style>
+
+    <section class="h-100 gradient-custom-2">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-9 col-xl-7">
+                    <div class="card">
+                        <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+                            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                                <img src="https://cdn.icon-icons.com/icons2/3054/PNG/512/account_profile_user_icon_190494.png"
+                                     alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                                     style="width: 150px; z-index: 1">
+                            </div>
+                            <div class="ms-3" style="margin-top: 130px;">
+                                <h5 id="info">Prénom et Nom</h5>
+                                    <a href="#achats">Voir mes achats</a>
+                            </div>
+                        </div>
+                        <div class="card-body p-4 text-black">
+                            <div class="mb-5">
+                                <div class="p-4" style="background-color: #f8f9fa;">
+                                    <p class="font-italic mb-1">Adresse ici</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <p id="achats" class="lead fw-normal mb-0">Achats récents</p>
+                            </div>
+                            <div class="card rounded-3 mb-4">
+                                <div div class="card-body p-4">
+                                    <div id="${uneinfo.id}" class="row d-flex justify-content-between align-items-center">
+                                        <div class="col-md-2 col-lg-2 col-xl-2"> <img class="img-fluid rounded-3" src="${uneinfo.image}" alt=""></div>
+                                        <div class="col-md-3 col-lg-3 col-xl-3"><p class="lead fw-normal mb-2">${uneinfo.article}</p><span class="text-muted">prix unitaire: </span><span class="unitaire">${uneinfo.prix}</span>€</div>
+                                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex" style="gap: 7%;"><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></div>
+                                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1"><span class="mb-0 prix">${uneinfo.prix}*${uneinfo.quantite}</span>€</div>
+                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end"><a href="#!" class="text-danger"><box-icon name='trash-alt' type='solid' color='#f56c6c' ></box-icon></a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 {% endblock %}
