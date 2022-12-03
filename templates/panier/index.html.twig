@@ -42,6 +42,10 @@
             display: none;
         }
 
+        #test {
+            margin-left: 20px;
+        }
+
     </style>
 
     <section class="h-100" style="background-color: #eee;">
@@ -161,16 +165,6 @@
                                                         Veuillez indiquer un code postal.
                                                     </div>
                                                 </div>
-                                                <div class="col-md-5 mb-3">
-                                                    <label for="pays">Pays</label>
-                                                    <select class="custom-select d-block w-100" id="pays" required>
-                                                        <option value="">Choisir...</option>
-                                                        <option>France</option>
-                                                    </select>
-                                                    <div class="invalid-feedback">
-                                                        Veuillez sélectionner un pays.
-                                                    </div>
-                                                </div>
                                             </div>
                                             <hr class="mb-4">
                                             <div class="custom-control custom-checkbox">
@@ -222,7 +216,7 @@
                                 </div>
                                 <form action="{{ path('app_finalisation') }}" method="post">
                                     <input type="hidden" name="liste" id="liste">
-                                    <button style="margin-top:20px" class="btn btn-primary btn-lg btn-block" type="submit">Valider ma commande</button>
+                                    <button style="margin-top:20px" class="btn btn-lg btn-block btn-panier text-white" type="submit">Valider ma commande</button>
                                 </form>
                             </div>
                         </div>
