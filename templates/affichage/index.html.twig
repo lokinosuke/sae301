@@ -218,7 +218,7 @@
 {% for manif in manifs %}
     <a id="article-lien" href="{{ path("app_affichagedetail",{id:manif.id}) }}">
         <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
-            <img src="{{ asset("assets/images/#{ manif.affiche }") }}" class="card-img-top card-img" alt="concert makala" height="200rem">
+            <img src="{{ asset("assets/images/#{ manif.affiche }") }}" class="card-img-top card-img" alt="évènement" height="200rem">
             {% if manif.genre == 'Théâtre' %}
                 <div class="text-container5">
                     <p class="card-text4 fs-6">{{ manif.genre }}</p>
@@ -245,7 +245,7 @@
                     <p class="card-text3 fs-2 text-start" id="prix">{{ manif.prix }}€</p>
                 {% endif %}
                 <div class="text-container">
-                    <a href="{{ path("app_affichagedetail",{id:manif.id}) }}"><p class="card-text2 fs-6">Voir les details</p></a>
+                    <a href="{{ path("app_affichagedetail",{id:manif.id}) }}"><p class="card-text2 fs-6">Voir les détails</p></a>
                 </div>
             </div>
         </div>
