@@ -1,10 +1,44 @@
-{% extends 'base.html.twig' %}
+{% extends 'basevariant.html.twig' %}
 
-{% block title %}Hello FinalisationController!{% endblock %}
+{% block title %}Merci pour votre achat !{% endblock %}
 
 {% block body %}
 
-<h1>GG COMMANDE REUSSIE</h1>
+<style>
+
+    body {
+        background-color: #eee;
+    }
+
+    .card {
+        margin: 0 auto;
+        position: relative;
+        margin-top: 100px;
+    }
+
+    .card-container {
+        height: 100vh;
+    }
+
+    h5 {
+        font-weight: bold;
+    }
+
+</style>
+
+<div class="card-container">
+    <div class="card text-white mb-3" style="max-width: 25rem;">
+        <div class="card-header bg-success">Merci pour votre achat !</div>
+        <div class="card-body">
+          <h5 class="card-title text-black">Votre commande a bien été validée.</h5>
+            <p class="card-text text-black">Tout est bon ! Vous recevrez vos e-billets sur votre boîte mail ({{ app.user.userIdentifier }}) dans un délai maximum de 24H.</p>
+            <a href="{{ path("app_accueil") }}"><p class="card-text2 fs-6">Retour à l'accueil</p></a>
+        </div>
+    </div>
+</div>
+
+
+
     <script>
         document.cookie = '[]; path=/';
     </script>
