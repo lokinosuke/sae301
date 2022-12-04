@@ -56,15 +56,6 @@
             margin-left: 20px;
         }
 
-        .total {
-            margin-bottom: 30px;
-        }
-
-        .total p {
-            margin: 0 auto;
-            font-family: Arial;
-        }
-
     </style>
 
     <section class="h-100" style="background-color: #eee;">
@@ -84,10 +75,8 @@
                         </div>
                     </div>
 
-
                     <div class="card">
                         <div class="card-body">
-                            <input type="hidden" name="liste" id="liste">
                             <button type="button" class="btn btn-light btn-block btn-lg" ><a href="{{ path('app_affichage') }}">Continuer vos achats</a></button>
                             {% if app.user %}
                                 <button id="test" type="button" class="btn btn-block btn-lg btn-panier text-white"><a
@@ -142,7 +131,7 @@
                                     <div class="col-md-8 order-md-1">
                                         <h4 class="mb-3" style="margin-bottom: 10px">Adresse de facturation</h4>
 
-                                        <form action="{{ path('app_finalisation') }}" method="post">
+                                        <form action="{{ path('app_validation') }}" method="post">
                                             <div class="row">
                                                 <div class="col-md-6 mb-3">
                                                     <label for="prenom">Prénom</label>
@@ -236,7 +225,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                    <input type="hidden" name="liste" id="liste">
+                                    <input type="hidden" value="" name="liste" id="liste">
                                     <button style="margin-top:20px" class="btn btn-lg btn-block btn-panier text-white" type="submit">Valider ma commande</button>
                                 </form>
                             </div>
