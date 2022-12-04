@@ -44,7 +44,7 @@
 
         .card-text1 {
             padding-left: 20px;
-            color: gray;
+            color: #555555;
             font-weight: bold;
         }
 
@@ -57,7 +57,7 @@
 
         .text-container2 {
             margin-left: 20px;
-            background-color: #3EB57C;
+            background-color: #357456;
             border-radius: 15px;
             width: 100px;
             position: absolute;
@@ -67,7 +67,7 @@
 
         .text-container3 {
             margin-left: 20px;
-            background-color: #3E8AB5;
+            background-color: #13567c;
             border-radius: 15px;
             width: 100px;
             position: absolute;
@@ -77,7 +77,7 @@
 
         .text-container4 {
             margin-left: 20px;
-            background-color: #B53E3E;
+            background-color: #7a2020;
             border-radius: 15px;
             width: 100px;
             position: absolute;
@@ -87,7 +87,7 @@
 
         .text-container5 {
             margin-left: 20px;
-            background-color: #784F86;
+            background-color: #481f55;
             border-radius: 15px;
             width: 100px;
             position: absolute;
@@ -216,7 +216,6 @@
 
     <div class="card-container">
 {% for manif in manifs %}
-    <a id="article-lien" href="{{ path("app_affichagedetail",{id:manif.id}) }}">
         <div class="card rounded-5 overflow-hidden shadow-sm" style="width: 25rem;">
             <img src="{{ asset("assets/images/#{ manif.affiche }") }}" class="card-img-top card-img" alt="évènement" height="200rem">
             {% if manif.genre == 'Théâtre' %}
@@ -237,7 +236,7 @@
                 </div>
             {% endif %}
             <div class="card-body" href="{{ path("app_affichagedetail",{id:manif.id}) }}">
-                <h5 class="card-title text-start" id="article">{{ manif.titre}} - {{ manif.derouler.endroit }}</h5>
+                <a id="article-lien" href="{{ path("app_affichagedetail",{id:manif.id}) }}"><h5 class="card-title text-start" id="article">{{ manif.titre}} - {{ manif.derouler.endroit }}</h5></a>
                 <p class="card-text1 fs-6 text-start">{{ manif.date |date("d/m/Y H:i")}}</p>
                 {% if manif.prix == '0.00' %}
                     <p class="card-text3 fs-2 text-start" id="prix">GRATUIT</p>
@@ -249,7 +248,6 @@
                 </div>
             </div>
         </div>
-    </a>
 
 {% endfor %}
     </div>
