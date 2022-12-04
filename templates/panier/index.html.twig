@@ -150,14 +150,6 @@
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="email">Email <span class="text-sucess">(Vous recevrez votre ticket par mail.)</span></label>
-                                                <input type="email" name="mail" class="form-control" id="email" placeholder="jeandupont@exemple.com">
-                                                <div class="invalid-feedback">
-                                                    Veuillez indiquer une adresse mail valide.
-                                                </div>
-                                            </div>
-
-                                            <div class="mb-3">
                                                 <label for="adresse">Adresse</label>
                                                 <input type="text" name="adresse" class="form-control" id="adresse" placeholder="9 rue du Quebec" required>
                                                 <div class="invalid-feedback">
@@ -225,6 +217,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <input type="hidden" name="total" id="totalcommande">
                                     <input type="hidden" value="" name="liste" id="liste">
                                     <button style="margin-top:20px" class="btn btn-lg btn-block btn-panier text-white" type="submit">Valider ma commande</button>
                                 </form>

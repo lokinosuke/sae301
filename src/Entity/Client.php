@@ -38,6 +38,21 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'Client', targetEntity: Commande::class)]
     private Collection $commandes;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $nom = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $prenom = null;
+
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $adresse = null;
+
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $adressedeux = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $codepostal = null;
+
     public function __construct()
     {
         $this->commandes = new ArrayCollection();
@@ -151,6 +166,66 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
                 $commande->setClient(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(?string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(?string $prenom): self
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getAdresse(): ?string
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(?string $adresse): self
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function getAdressedeux(): ?string
+    {
+        return $this->adressedeux;
+    }
+
+    public function setAdressedeux(?string $adressedeux): self
+    {
+        $this->adressedeux = $adressedeux;
+
+        return $this;
+    }
+
+    public function getCodepostal(): ?string
+    {
+        return $this->codepostal;
+    }
+
+    public function setCodepostal(?string $codepostal): self
+    {
+        $this->codepostal = $codepostal;
 
         return $this;
     }

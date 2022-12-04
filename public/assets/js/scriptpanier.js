@@ -26,6 +26,7 @@ montab.forEach(uneinfo => {
     totalgeneral += uneinfo.prix * uneinfo.quantite
 })
 document.getElementById('total').innerHTML = totalgeneral.toFixed()
+document.getElementById('totalcommande').value = totalgeneral.toFixed()
 
 
 document.querySelectorAll('.plus').forEach(clickplus)
@@ -48,6 +49,7 @@ function clickplus(tag){
         console.log(montab)
         totalgeneral += parseFloat(prix)
         document.querySelector('#total').innerHTML=totalgeneral.toFixed()
+        document.getElementById('totalcommande').value = totalgeneral.toFixed()
         console.log(montab)
     })
 }
@@ -76,6 +78,7 @@ function clickmoins(tag){
         console.log(montab)
         totalgeneral -= parseFloat(prix)
         document.querySelector('#total').innerHTML=totalgeneral.toFixed()
+        document.getElementById('totalcommande').value = totalgeneral.toFixed()
         console.log(montab)
     })
 
