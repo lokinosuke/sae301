@@ -44,7 +44,6 @@ class ValidationController extends AbstractController
 
         foreach ($liste as $manifestation) {
             $manif = $manifRepository->find($manifestation->id);
-
             $ligneCommande = new LigneCommande();
             $ligneCommande->setManifId($manif);
             $ligneCommande->setNbPlace($manifestation->quantite);
