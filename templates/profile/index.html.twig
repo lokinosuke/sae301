@@ -20,7 +20,7 @@
             background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
         }
 
-        .p-4 {
+        .adresse{
             margin-top: 30px;
         }
 
@@ -42,13 +42,14 @@
                                      style="width: 150px; z-index: 1">
                             </div>
                             <div class="ms-3" style="margin-top: 130px;">
-                                <h5 id="info">{{ app.user.prenom }} {{ app.user.nom }}</h5>
+                                <h5 id="info">Bonjour, {{ app.user.prenom }} {{ app.user.nom }}</h5>
                                     <a href="#achats">Voir mes achats</a>
                             </div>
                         </div>
-                        <div class="card-body p-4 text-black">
+                        <div class="card-body adresse p-4 text-black">
                             <div class="mb-5">
                                 <div class="p-4" style="background-color: #f8f9fa;">
+                                    <p>Adresse :</p>
                                     <p class="font-italic mb-1">{{ app.user.adresse }}</p>
                                     <p class="font-italic mb-1">{{ app.user.adressedeux }}</p>
                                     <p class="font-italic mb-1">{{ app.user.codepostal }}</p>
@@ -58,14 +59,17 @@
                                 <p id="achats" class="lead fw-normal mb-0">Achats récents</p>
                             </div>
                             {% for commande in commandes %}
-<div style="display: flex;
-    justify-content: space-between;
-    align-items: flex-end;">
+
                                 {% for ligneCommande in commande.ligneCommandes %}
-                                    - {{  ligneCommande.manifId.titre }} <br>
+                                    <div class="card rounded-3 mb-4">
+                                        <div div class="card-body p-4">
+                                            <div class="row d-flex justify-content-between align-items-center">
+                                                <div class="col-md-3 col-lg-3 col-xl-3"><p class="lead fw-normal mb-2">{{  ligneCommande.manifId.titre }}</div>
+                                                <div class="col-md-1 col-lg-1 col-xl-1 text-end"><a href="#!" class="text-sucess"><box-icon name='check-circle' type='solid' color='#36a940' ></box-icon></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 {% endfor %}
-                                <p style="font-weight: bold">Total de la commande : {{ commande.total }} €</p>
-</div>
                             {% endfor %}
 
 
