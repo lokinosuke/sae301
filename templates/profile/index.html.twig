@@ -49,28 +49,23 @@
                         <div class="card-body p-4 text-black">
                             <div class="mb-5">
                                 <div class="p-4" style="background-color: #f8f9fa;">
-                                    <p class="font-italic mb-1">Adresse ici</p>
+                                    <p class="font-italic mb-1">{{ app.user.adresse }}</p>
+                                    <p class="font-italic mb-1">{{ app.user.adressedeux }}</p>
+                                    <p class="font-italic mb-1">{{ app.user.codepostal }}</p>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mb-4">
                                 <p id="achats" class="lead fw-normal mb-0">Achats récents</p>
                             </div>
                             {% for commande in commandes %}
-                                {{ commande.total }}
+<div style="display: flex;
+    justify-content: space-between;
+    align-items: flex-end;">
                                 {% for ligneCommande in commande.ligneCommandes %}
-                                    {{  ligneCommande.manifId.titre }}
+                                    - {{  ligneCommande.manifId.titre }} <br>
                                 {% endfor %}
-                            <div class="card rounded-3 mb-4">
-                                <div div class="card-body p-4">
-                                    <div id="${uneinfo.id}" class="row d-flex justify-content-between align-items-center">
-                                        <div class="col-md-2 col-lg-2 col-xl-2"> <img class="img-fluid rounded-3" src="${uneinfo.image}" alt=""></div>
-                                        <div class="col-md-3 col-lg-3 col-xl-3"><p class="lead fw-normal mb-2">{{ commande.id }}</p><span class="text-muted">prix unitaire: </span><span class="unitaire">${uneinfo.prix}</span>€</div>
-                                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex" style="gap: 7%;"><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></div>
-                                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1"><span class="mb-0 prix">${uneinfo.prix * uneinfo.quantite}</span>€</div>
-                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end"><a href="#!" class="text-danger"><box-icon name='trash-alt' type='solid' color='#f56c6c' ></box-icon></a></div>
-                                    </div>
-                                </div>
-                            </div>
+                                <p style="font-weight: bold">Total de la commande : {{ commande.total }} €</p>
+</div>
                             {% endfor %}
 
 
