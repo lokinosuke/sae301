@@ -18,7 +18,12 @@
 <p id="title" style="text-align:center;"><strong>CONDITIONS GENERALES DE VENTE</strong></p>
 
     <div id="pdf">
-        <iframe src="{{ asset('assets/pdf/cgv.pdf') }}" height="700rem" width="700rem"></iframe>
+        <object type="application/pdf" width="80%" height="600rem">
+            <param name="src" value="{{ asset('assets/pdf/cgv.pdf') }}" />
+            <p>Il semble que votre navigateur ne soit pas en capacité d'afficher le fichier PDF.
+                Pas de soucis, vous pouvez le télécharger ici : <a href="{{ asset('assets/pdf/cgv.pdf') }}">télécharger le pdf.</a>
+            </p>
+        </object>
     </div>
 
 {% endblock %}
