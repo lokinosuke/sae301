@@ -182,7 +182,7 @@
             margin-right: 10px;
         }
 
-        .btn:hover {
+        .btn-retour:hover {
             background-color: white;
         }
 
@@ -230,7 +230,7 @@
                 </div>
                 <p><span id="prix">{{ manif.prix }}</span>€</p>
                 <div class="buttonbas">
-                    <button type="button" class="btn btn-light btn-block btn-lg" ><a style="text-decoration: none; color: black" href="{{ path('app_affichage') }}">Continuer vos achats</a></button>
+                    <button type="button" class="btn btn-retour btn-light btn-block btn-lg" ><a style="text-decoration: none; color: black" href="{{ path('app_affichage') }}">Continuer vos achats</a></button>
                     <div class="link-container">
 
                         {% if manif.genre == 'Théâtre' %}
